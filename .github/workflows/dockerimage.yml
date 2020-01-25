@@ -1,0 +1,20 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build SvenAiWeb Docker image
+      run: docker build /SvenAiWeb --file Dockerfile --tag sven-ai-web:latest
+    - name: Publish SvenAiWeb to Dockerhub
+      uses: zenato/docker-action@v1.0.0
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        name: website/sven_ai
