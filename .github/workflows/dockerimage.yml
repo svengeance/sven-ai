@@ -11,11 +11,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build SvenAiWeb Docker image
-      run: docker build SvenAiWeb --tag sven-ai-web:latest
-    - name: Publish SvenAiWeb to Dockerhub
-      uses: elgohr/Publish-Docker-Github-Action@2.12
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        name: sven.ai.web
-        workdir: SvenAiWeb
+      run: docker build SvenAiWeb --tag sven.ai.web:latest
+    - name: Log in to DockerHub Registry
+      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
+    - name: Push the built Docker image
+      run: docker push stevev0189/sven.ai.web:latest
+      
