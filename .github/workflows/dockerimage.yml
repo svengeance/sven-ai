@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build and Publish sven.ai.web Docker Image
 
 on: [push]
 
@@ -13,8 +13,9 @@ jobs:
     - name: Build SvenAiWeb Docker image
       run: docker build SvenAiWeb --tag sven-ai-web:latest
     - name: Publish SvenAiWeb to Dockerhub
-      uses: zenato/docker-action@v1.0.0
+      uses: elgohr/Publish-Docker-Github-Action@2.12
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        name: website/sven_ai
+        name: sven.ai.web
+        workdir: SvenAiWeb
