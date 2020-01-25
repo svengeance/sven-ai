@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build SvenAiWeb Docker image
-      run: docker build /SvenAiWeb --file Dockerfile --tag sven-ai-web:latest
+      run: docker build SvenAiWeb --tag sven-ai-web:latest
     - name: Publish SvenAiWeb to Dockerhub
       uses: zenato/docker-action@v1.0.0
       with:
