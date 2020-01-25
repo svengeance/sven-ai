@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build SvenAiWeb Docker image
-      run: docker build SvenAiWeb --tag sven.ai.web:latest
+      run: docker build SvenAiWeb --tag stevev0189/sven.ai.web:latest
     - name: Log in to DockerHub Registry
       run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
     - name: Push the built Docker image
