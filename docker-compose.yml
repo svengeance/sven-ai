@@ -1,0 +1,14 @@
+version: "3"
+services:
+    frontend:
+        image: stevev0189/sven.ai.web:latest
+        ports:
+            - "5000:5000"
+    nginx:
+        image: nginx:alpine
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./nginx/conf.d:/etc/nginx/conf.d
+            - /etc/letsencrypt:/etc/letsencrypt    
