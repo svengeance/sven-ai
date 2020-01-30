@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2.0.0
       - name: Set terminal vars
         run: SHORT_SHA=$(git rev-parse --short HEAD)
       - name: Read previous docker-compose.yml
@@ -18,8 +18,15 @@ jobs:
         run: sed -i -r "s/sven.ai.web:.+/sven.ai.website:$(git rev-parse --short HEAD)/g" docker-compose.yml
       - name: Read docker compose file
         run: cat docker-compose.yml
-
-    # - name: Build SvenAiWeb Docker image
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v3.0.0
+        with:
+          # The name of the user that will be displayed as the author of the commit
+          author_name: Git CI
+          message: Update docker images with latest tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # - name: Build SvenAiWeb Docker image
     #   run: docker build SvenAiWeb --tag stevev0189/sven.ai.web:latest
     # - name: Log in to DockerHub Registry
     #   run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
