@@ -9,11 +9,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Build SvenAiWeb Docker image
-      run: docker build SvenAiWeb --tag stevev0189/sven.ai.web:latest
-    - name: Log in to DockerHub Registry
-      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
-    - name: Push the built Docker image
-      run: docker push stevev0189/sven.ai.web:latest
+      - name: Test sed replacement
+        run: sed -i -r 's/sven.ai.web:.+/sven.ai.website:something123/g' docker-compose.yml
+      - name: Read docker compose file
+        run: cat docker-compose.yml
+
+      # - name: Update docker-compose.yml file
+      #   run: sed -r 's/sven.ai.website.+/sven.ai.website:something123/g'
+    # - uses: actions/checkout@v1
+    # - name: Build SvenAiWeb Docker image
+    #   run: docker build SvenAiWeb --tag stevev0189/sven.ai.web:latest
+    # - name: Log in to DockerHub Registry
+    #   run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
+    # - name: Push the built Docker image
+    #   run: docker push stevev0189/sven.ai.web:latest
       
