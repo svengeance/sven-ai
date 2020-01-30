@@ -15,7 +15,7 @@ jobs:
       - name: Read previous docker-compose.yml
         run: cat docker-compose.yml
       - name: Update docker-compose.yml
-        run: sed -i -r "s/sven.ai.web:.+/sven.ai.website:$(git rev-parse --short HEAD)/g" docker-compose.yml
+        run: sed -i -r "s/sven.ai.web:.+/sven.ai.web:$(git rev-parse --short HEAD)/g" docker-compose.yml
       - name: Read docker compose file
         run: cat docker-compose.yml
       - name: Add & Commit
