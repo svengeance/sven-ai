@@ -10,15 +10,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Read current directory
-        run: ls -la
-      - name: Test sed replacement
-        run: sed -i -r 's/sven.ai.web:.+/sven.ai.website:something123/g' docker-compose.yml
+      - name: Set terminal vars
+        run: SHORT_SHA=$(git rev-parse --short HEAD)
+      - name: Update docker-compose.yml
+        run: sed -i -r 's/sven.ai.web:.+/sven.ai.website:$SHORT_SHA/g' docker-compose.yml
       - name: Read docker compose file
         run: cat docker-compose.yml
 
-      # - name: Update docker-compose.yml file
-      #   run: sed -r 's/sven.ai.website.+/sven.ai.website:something123/g'
     # - name: Build SvenAiWeb Docker image
     #   run: docker build SvenAiWeb --tag stevev0189/sven.ai.web:latest
     # - name: Log in to DockerHub Registry
