@@ -1,39 +1,39 @@
-# name: Build and Publish sven.ai.web Docker Image
+name: Build and Publish sven.ai.web Docker Image
 
-# on: [push]
+on: [push]
 
-# jobs:
+jobs:
 
-#   build:
+  build:
 
-#     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - uses: actions/checkout@v2.0.0
-#       - name: Build SvenAiWeb Docker image
-#         run: docker build SvenAiWeb --tag stevev0189/sven.ai.web:$(git rev-parse --short HEAD)
-#       - name: Log in to DockerHub Registry
-#         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
-#       - name: Push the built Docker image
-#         run: docker push stevev0189/sven.ai.web:$(git rev-parse --short HEAD)
-#       - name: Read previous docker-compose.yml
-#         run: cat docker-compose.yml
-#       - name: Update docker-compose.yml
-#         run: sed -i -r "s/sven.ai.web:.+/sven.ai.web:$(git rev-parse --short HEAD)/g" docker-compose.yml
-#       - name: Read docker compose file
-#         run: cat docker-compose.yml
-#       - name: Add & commit updated docker-compose.yml
-#         uses: EndBug/add-and-commit@v3.0.0
-#         with:
-#           author_name: Git CI
-#           message: Update docker images with latest tags
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#       - name: Restart docker-compose on remote server
-#         uses: appleboy/ssh-action@master
-#         with:
-#           host: sven.ai
-#           username: ${{ secrets.SSH_USERNAME }}
-#           password: ${{ secrets.SSH_PASSWORD }}
-#           port: 22
-#           script: sudo ./restart-docker.sh
+    steps:
+      # - uses: actions/checkout@v2.0.0
+      # - name: Build SvenAiWeb Docker image
+      #   run: docker build SvenAiWeb --tag stevev0189/sven.ai.web:$(git rev-parse --short HEAD)
+      # - name: Log in to DockerHub Registry
+      #   run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
+      # - name: Push the built Docker image
+      #   run: docker push stevev0189/sven.ai.web:$(git rev-parse --short HEAD)
+      # - name: Read previous docker-compose.yml
+      #   run: cat docker-compose.yml
+      # - name: Update docker-compose.yml
+      #   run: sed -i -r "s/sven.ai.web:.+/sven.ai.web:$(git rev-parse --short HEAD)/g" docker-compose.yml
+      # - name: Read docker compose file
+      #   run: cat docker-compose.yml
+      # - name: Add & commit updated docker-compose.yml
+      #   uses: EndBug/add-and-commit@v3.0.0
+      #   with:
+      #     author_name: Git CI
+      #     message: Update docker images with latest tags
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Restart docker-compose on remote server
+        uses: appleboy/ssh-action@master
+        with:
+          host: sven.ai
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          script: sudo ./restart-docker.sh
