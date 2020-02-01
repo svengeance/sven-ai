@@ -22,10 +22,9 @@ jobs:
         run: sed -i -r "s/sven.ai.web:.+/sven.ai.web:$(git rev-parse --short HEAD)/g" docker-compose.yml
       - name: Read docker compose file
         run: cat docker-compose.yml
-      - name: Add & Commit
+      - name: Add & commit updated docker-compose.yml
         uses: EndBug/add-and-commit@v3.0.0
         with:
-          # The name of the user that will be displayed as the author of the commit
           author_name: Git CI
           message: Update docker images with latest tags
         env:
