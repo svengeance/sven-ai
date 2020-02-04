@@ -36,14 +36,34 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-human-greeting',
           title: 'Greetings',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          icon: 'mdi-information-outline',
+          title: 'About Me',
+          to: '/about'
+        },
+        {
+          icon: 'mdi-account-group',
+          title: 'Work Experience',
+          to: '/work-experience'
+        },
+        {
+          icon: 'mdi-clipboard-list-outline',
+          title: 'Skillset',
+          to: '/languages-and-tooling'
+        },
+        {
+          icon: 'mdi-star-circle-outline',
+          title: 'Unique Projects/Achievements',
+          to: '/unique-projects'
+        },
+        {
+          icon: 'mdi-briefcase',
+          title: 'Past Projects',
+          to: '/past-projects'
         }
       ],
       drawer: false,
