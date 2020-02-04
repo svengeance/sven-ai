@@ -3,7 +3,7 @@
     <v-navigation-drawer v-model="drawer" :clipped="clipped"
                          :permanent="$vuetify.breakpoint.mdAndUp" fixed app
     >
-      <v-list>
+      <v-list nav>
         <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -27,6 +27,13 @@
     </v-footer>
   </v-app>
 </template>
+
+<style scoped>
+  .v-list-item__title {
+    text-overflow: unset;
+    white-space: normal;
+  }
+</style>
 
 <script>
 export default {
@@ -57,7 +64,7 @@ export default {
         },
         {
           icon: 'mdi-star-circle-outline',
-          title: 'Unique Projects/Achievements',
+          title: 'Unique Projects & Achievements',
           to: '/unique-projects'
         },
         {
