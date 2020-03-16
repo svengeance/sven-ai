@@ -16,6 +16,19 @@
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon v-if="$vuetify.breakpoint.smAndDown" @click.stop="drawer = !drawer" />
+      <v-container fluid>
+        <v-row no-gutters class="font-weight-light">
+          <v-col align-self="center" cols="6">
+            Stephen (Sven) Vernyi
+          </v-col>
+          <v-col align-self="end" offset-md="4" offset="1" cols="1" class="text-right">
+            <a>Github</a>
+          </v-col>
+          <v-col align-self="end" offset-md="0" offset="1" cols="1" class="text-right">
+            <a href="mailto:sven.vernyi@gmail.com">Email</a>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-app-bar>
     <v-content>
       <v-container>
