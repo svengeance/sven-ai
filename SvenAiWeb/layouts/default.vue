@@ -41,10 +41,18 @@
   </v-app>
 </template>
 
-<style scoped>
+<style>
+  .v-content__wrap  {
+    background-image: url('https://i.imgur.com/EncL64d.jpg');
+    background-position: center;
+    background-size: cover;
+  }
   .v-list-item__title {
     text-overflow: unset;
     white-space: normal;
+  }
+  .v-navigation-drawer {
+    background: rgba(0, 0, 0, 0.1);
   }
 </style>
 
