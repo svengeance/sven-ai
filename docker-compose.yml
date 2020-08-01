@@ -1,7 +1,7 @@
 version: "3"
 services:
     frontend:
-        image: stevev0189/sven.ai.web:0.1.0
+        image: stevev0189/sven.ai.web:0.2.1
         ports:
             - "5000:5000"
     nginx:
