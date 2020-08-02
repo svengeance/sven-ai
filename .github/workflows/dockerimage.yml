@@ -63,4 +63,4 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22
-          script: env && sudo ./restart-docker.sh
+          script: sudo ./restart-docker.sh
