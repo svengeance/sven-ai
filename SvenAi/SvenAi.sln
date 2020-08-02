@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvenAi", "SvenAi\SvenAi.csproj", "{69ED6904-AC75-4E90-9586-A730B5A00669}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SvenAi", "SvenAi\SvenAi.csproj", "{69ED6904-AC75-4E90-9586-A730B5A00669}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvenAi.Services", "SvenAi.Services\SvenAi.Services.csproj", "{71155E4A-B91B-4C0F-8A4C-1D5DD111F536}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvenAi.Core", "SvenAi.Core\SvenAi.Core.csproj", "{F1D7A0E2-AAAB-4B8D-98E2-2282A57D669F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{69ED6904-AC75-4E90-9586-A730B5A00669}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69ED6904-AC75-4E90-9586-A730B5A00669}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69ED6904-AC75-4E90-9586-A730B5A00669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71155E4A-B91B-4C0F-8A4C-1D5DD111F536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71155E4A-B91B-4C0F-8A4C-1D5DD111F536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71155E4A-B91B-4C0F-8A4C-1D5DD111F536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71155E4A-B91B-4C0F-8A4C-1D5DD111F536}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1D7A0E2-AAAB-4B8D-98E2-2282A57D669F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1D7A0E2-AAAB-4B8D-98E2-2282A57D669F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1D7A0E2-AAAB-4B8D-98E2-2282A57D669F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1D7A0E2-AAAB-4B8D-98E2-2282A57D669F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
