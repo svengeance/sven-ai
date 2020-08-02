@@ -51,7 +51,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build SvenAi Docker Image
-        run: docker build -t stevev0189/sven.ai.web:${{ needs.version-build.outputs.version }} SvenAi
+        run: docker build -t stevev0189/sven.ai:${{ needs.version-build.outputs.version }} SvenAi
       
       - name: Log in to DockerHub Registry
         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
@@ -68,7 +68,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        
+
       - name: Update docker-compose.yml for SvenAiWeb
         run: sed -i -r "s/sven.ai.web:.+/sven.ai.web:${{ needs.version-build.outputs.version }}/g" docker-compose.yml
 
