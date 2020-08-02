@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
 
-  build:
+  build-frontend:
 
     runs-on: ubuntu-latest
 
@@ -55,10 +55,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Restart docker-compose on remote server
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@a2f91cbad15a1f1f30ed316d0a9cbccdc33f23d4
+        env:
+          GITHUBACCESSTOKEN: ${{ secrets.GITHUBACCESSTOKEN }}
         with:
           host: sven.ai
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22
-          script: sudo ./restart-docker.sh
+          script: env && sudo ./restart-docker.sh
