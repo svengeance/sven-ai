@@ -32,7 +32,7 @@ jobs:
     needs: version-build
     steps:
       - name: Build SvenAiWeb Docker Image
-        run: docker build SvenAiWeb --tag stevev0189/sven.ai.web:${{ needs.version-build.outputs.version }}
+        run: docker build -t stevev0189/sven.ai.web:${{ needs.version-build.outputs.version }} SvenAiWeb
       
       - name: Log in to DockerHub Registry
         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
@@ -45,7 +45,7 @@ jobs:
     needs: version-build
     steps:
       - name: Build SvenAi Docker Image
-        run: docker build SvenAi --tag stevev0189/sven.ai.web:${{ needs.version-build.outputs.version }}
+        run: docker build -t stevev0189/sven.ai.web:${{ needs.version-build.outputs.version }} SvenAi
       
       - name: Log in to DockerHub Registry
         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
