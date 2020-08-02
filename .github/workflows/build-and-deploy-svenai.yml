@@ -31,6 +31,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: version-build
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Build SvenAiWeb Docker Image
         run: docker build -t stevev0189/sven.ai.web:${{ needs.version-build.outputs.version }} SvenAiWeb
       
@@ -44,6 +47,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: version-build
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Build SvenAi Docker Image
         run: docker build -t stevev0189/sven.ai.web:${{ needs.version-build.outputs.version }} SvenAi
       
@@ -60,6 +66,9 @@ jobs:
       - build-frontend
       - version-build
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
       - name: Update docker-compose.yml for SvenAiWeb
         run: sed -i -r "s/sven.ai.web:.+/sven.ai.web:${{ needs.version-build.outputs.version }}/g" docker-compose.yml
 
