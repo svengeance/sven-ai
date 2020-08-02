@@ -6,7 +6,8 @@ jobs:
 
   version-build:
     runs-on: ubuntu-latest
-    outputs: ${{ steps.gitversion.outputs.majorMinorPatch }}
+    outputs: 
+      version: ${{ steps.gitversion.outputs.majorMinorPatch }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -31,26 +32,26 @@ jobs:
     needs: version-build
     steps:
       - name: Build SvenAiWeb Docker Image
-        run: docker build SvenAiWeb --tag stevev0189/sven.ai.web:${{ needs.version-build.outputs.majorMinorPatch }}
+        run: docker build SvenAiWeb --tag stevev0189/sven.ai.web:${{ needs.version-build.outputs.version }}
       
       - name: Log in to DockerHub Registry
         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
       
       - name: Push the Built Docker Image
-        run: docker push stevev0189/sven.ai.web:${{ needs.version-build.outputs.majorMinorPatch }}
+        run: docker push stevev0189/sven.ai.web:${{ needs.version-build.outputs.version }}
     
   build-api:
     runs-on: ubuntu-latest
     needs: version-build
     steps:
       - name: Build SvenAi Docker Image
-        run: docker build SvenAi --tag stevev0189/sven.ai.web:${{ needs.version-build.outputs.majorMinorPatch }}
+        run: docker build SvenAi --tag stevev0189/sven.ai.web:${{ needs.version-build.outputs.version }}
       
       - name: Log in to DockerHub Registry
         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
       
       - name: Push the Built Docker Image
-        run: docker push stevev0189/sven.ai:${{ needs.version-build.outputs.majorMinorPatch }}
+        run: docker push stevev0189/sven.ai:${{ needs.version-build.outputs.version }}
 
   update-docker-compose:
     runs-on: ubuntu-latest
@@ -60,10 +61,10 @@ jobs:
       - version-build
     steps:
       - name: Update docker-compose.yml for SvenAiWeb
-        run: sed -i -r "s/sven.ai.web:.+/sven.ai.web:${{ needs.version-build.outputs.majorMinorPatch }}/g" docker-compose.yml
+        run: sed -i -r "s/sven.ai.web:.+/sven.ai.web:${{ needs.version-build.outputs.version }}/g" docker-compose.yml
 
       - name: Update docker-compose.yml for SvenAi
-        run: sed -i -r "s/sven.ai:.+/sven.ai:${{ needs.version-build.outputs.majorMinorPatch }}/g" docker-compose.yml
+        run: sed -i -r "s/sven.ai:.+/sven.ai:${{ needs.version-build.outputs.version }}/g" docker-compose.yml
 
       - name: Add & Commit Updated docker-compose.yml
         uses: EndBug/add-and-commit@v3.0.0
