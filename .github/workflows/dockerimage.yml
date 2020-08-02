@@ -60,6 +60,7 @@ jobs:
           GITHUBACCESSTOKEN: ${{ secrets.GITHUBACCESSTOKEN }}
         with:
           host: sven.ai
+          envs: GITHUBACCESSTOKEN
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22
