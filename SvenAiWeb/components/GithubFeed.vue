@@ -77,7 +77,7 @@
    }
 </style>
 
-<script lang="ts">
+<script>
 const iconMap = {
   CommitCommentEvent: 'comment-text',
   CreateEvent: 'source-branch-plus',
@@ -139,8 +139,6 @@ export default {
   async fetch() {
     this.gitProfile = await this.$http.$get('api/Git/Users/Me')
     this.gitFeed = (await this.$http.$get('api/Git/Users/Me/Activity')).map(m => ({ ...m, icon: iconMap[m.activityType] }))
-    console.log(`Retrieved ${this.gitFeed.length} items`)
-    console.log(this.gitFeed[0])
   }
 }
 </script>
