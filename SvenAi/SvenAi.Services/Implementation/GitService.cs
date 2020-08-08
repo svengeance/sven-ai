@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Octokit;
 using SvenAi.Core;
 using SvenAi.Core.Git;
@@ -8,28 +9,15 @@ namespace SvenAi.Services.Implementation
 {
     public class GitService : IGitService
     {
-        private readonly GitHubClient _client;
-        public GitService(AccessTokens accessTokens)
+        private readonly ICacheService _cacheService;
+
+        public GitService(ICacheService cacheService)
         {
-            _client = new GitHubClient(new ProductHeaderValue("SvenAi"));
-            _client.Credentials = new Credentials(accessTokens.GitHub);
+            _cacheService = cacheService;
         }
 
-        public async Task<GitUserViewModel> GetUserInformation(string userName) => MapToGitUserViewModel(await _client.User.Get(userName));
+        public async Task<GitUserViewModel> GetUserInformation(string userName) => await _cacheService.GetCachedGitUser(userName);
 
-        private static GitUserViewModel MapToGitUserViewModel(User user) =>
-            new GitUserViewModel
-            {
-                AvatarUrl = user.AvatarUrl,
-                Bio = user.Bio,
-                Blog = user.Blog,
-                Hireable = user.Hireable,
-                HtmlUrl = user.HtmlUrl,
-                NumPrivateRepos = user.TotalPrivateRepos,
-                NumPublicRepos = user.PublicRepos,
-                NumPrivateGists = user.PrivateGists,
-                NumPublicGists = user.PublicGists,
-                Url = user.Url
-            };
+        public async Task<List<GitActivityItemViewModel>> GetUserActivity(string userName) => await _cacheService.GetCachedGitActivity(userName);
     }
 }

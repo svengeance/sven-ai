@@ -20,7 +20,10 @@ namespace SvenAi.Controllers
             _gitService = gitService;
         }
 
-        [HttpGet("User/{userName}/About")]
-        public async Task<IActionResult> GetUserProfileInformation(string userName) => Ok(await _gitService.GetUserInformation(userName));
+        [HttpGet("Users/Me")]
+        public async Task<IActionResult> GetUserProfileInformation() => Ok(await _gitService.GetUserInformation("svengeance"));
+
+        [HttpGet("Users/Me/Activity")]
+        public async Task<IActionResult> GetUserActivity() => Ok((await _gitService.GetUserActivity("svengeance")).ToList());
     }
 }

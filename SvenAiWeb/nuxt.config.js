@@ -1,8 +1,20 @@
 import colors from 'vuetify/es5/util/colors'
 
+const proxyConfig = () => process.env.DEPLOY_ENV == 'local' ? 'http://localhost:9001/api' : 'https://sven.ai/api';
+
 export default {
   components: true,
   mode: 'universal',
+  
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'about-default',
+        path: '',
+        component: resolve(__dirname, 'pages/about.vue')
+      })  
+    }
+  },
   /*
   ** Headers of the page
   */
@@ -26,6 +38,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@styles/globals.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -38,24 +51,30 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxt/typescript-build',
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxt/http',
+    '@nuxtjs/proxy'
   ],
   /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
+  ** Http module configuration
+  ** See https://http.nuxtjs.org/guide/
   */
-  axios: {
+  http: {
+    proxy: true
   },
+
+  proxy: [
+    proxyConfig()
+  ],
+
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module

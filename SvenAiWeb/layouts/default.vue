@@ -2,9 +2,9 @@
   <v-app dark>
     <v-container fluid class="py-0">
       <v-row>
-        <v-col class="pa-0">
+        <v-col order="1" class="pa-0">
           <Header />
-          <v-tabs background-color="transparent" class="ml-6">
+          <v-tabs background-color="transparent">
             <v-tab nuxt to="/about">
               About
             </v-tab>
@@ -21,13 +21,13 @@
               Recent Blog Posts
             </v-tab>
           </v-tabs>
-          <v-content>
+          <v-main>
             <v-container>
               <nuxt />
             </v-container>
-          </v-content>
+          </v-main>
         </v-col>
-        <v-col cols="2" class="pa-0">
+        <v-col cols="2" order="2" class="pa-0">
           <GithubFeed class=".d-inline-block" />
         </v-col>
       </v-row>

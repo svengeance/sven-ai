@@ -6,9 +6,9 @@ using SvenAi.Services.Implementation;
 
 namespace SvenAi.Services.Interface
 {
-    public interface IGitService
+    public interface ICacheService
     {
-        Task<GitUserViewModel> GetUserInformation(string userName);
-        Task<List<GitActivityItemViewModel>> GetUserActivity(string userName);
+        Task<GitUserViewModel> GetCachedGitUser(string userName);
+        Task<List<GitActivityItemViewModel>> GetCachedGitActivity(string userName);
     }
 }

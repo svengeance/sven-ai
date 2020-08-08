@@ -12,6 +12,9 @@ services:
         image: stevev0189/sven.ai.web:0.2.11
         ports:
             - "5000:5000"
+        environment:
+            - ApiUrl=$ApiUrl
+
     nginx:
         image: nginx:alpine
         ports:
