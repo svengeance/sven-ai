@@ -1,28 +1,28 @@
 <template>
   <v-sheet elevation="6" class="root" height="100vh">
     <v-container class="pa-0">
-      <v-row class="pb-4 px-4 py-0 site-header-component feed-header">
+      <div class="site-header-component feed-header">
         <span class="text-caption feed-header-label grey--text text--darken-1 text-center font-weight-bold">Github Activity Feed</span>
-        <v-col cols="2" class="d-flex align-center justify-center">
-          <a :href="gitProfile.htmlUrl" target="_blank">
-            <v-avatar size="64px">
+        <div class="feed-header-content text-dense d-inline-block py-6 px-2">
+          <a :href="gitProfile.htmlUrl" class="float-left" target="_blank">
+            <v-avatar :size="avatarSize">
               <v-img :src="gitProfile.avatarUrl" />
             </v-avatar>
           </a>
-        </v-col>
-        <v-col cols="10" class="px-0 d-flex flex-column justify-center profile-info">
-          <span>
-            <a :href="gitProfile.htmlUrl" target="_blank" class="text-h5 grey--text text--lighten-1">
+          <div class="d-inline-block text-no-wrap feed-header-profile-text">
+            <a :href="gitProfile.htmlUrl" :class="{'text-h5': $vuetify.breakpoint.xl, 'text-h6': $vuetify.breakpoint.lgAndDown}" target="_blank" class="text-wrap mb-n1 text-dense grey--text text--lighten-1">
               Svengeance
             </a>
-          </span>
-          <span class="text-subtitle-2 grey--text text--lighten-2">{{ gitProfile.bio }}</span>
-        </v-col>
-        <div class="px-2 text-caption feed-footer-label grey--text">
-          <span class="float-left">Repositories: {{ gitProfile.numPublicRepos }} public, {{ gitProfile.numPrivateRepos }} private</span>
-          <span class="float-right">Gists: {{ gitProfile.numPublicGists }} public, {{ gitProfile.numPrivateGists }} private</span>
+            <br>
+            <span :class="{'text-subtitle-2': $vuetify.breakpoint.xl, 'text-caption': $vuetify.breakpoint.lgAndDown}" class="text-wrap text-denser grey--text text--lighten-2">{{ gitProfile.bio }}</span>
+          </div>
         </div>
-      </v-row>
+        <div class="px-2 w-100 text-caption feed-footer-label grey--text text-dense">
+          <span class="float-left">Repos: {{ gitProfile.numPublicRepos }} public, {{ gitProfile.numPrivateRepos }} private</span>
+          <br v-if="$vuetify.breakpoint.lgAndDown">
+          <span class="float-left float-xl-right">Gists: {{ gitProfile.numPublicGists }} public, {{ gitProfile.numPrivateGists }} private</span>
+        </div>
+      </div>
       <v-divider />
       <v-row>
         <perfect-scrollbar>
@@ -59,11 +59,21 @@
 </style>
 
 <style lang="scss" scoped>
+  .text-denser {
+    line-height: 0.1;
+  }
   .text-dense {
     line-height: 16px;
   }
   .feed-header {
     position: relative;
+  }
+  .feed-header-content {
+    height: 100%;
+    position: relative;
+  }
+  .feed-header-profile-text {
+    width: 75%;
   }
   .feed-header-label {
     position: absolute;
@@ -71,7 +81,7 @@
   }
   .feed-footer-label {
     bottom: 0;
-    position: relative;
+    position: absolute;
     width: 100%;
   }
   .root {
@@ -139,6 +149,18 @@ export default {
           }
         }
       ]
+    }
+  },
+  computed: {
+    avatarSize () {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs': return '32px'
+        case 'sm': return '32px'
+        case 'md': return '32px'
+        case 'lg': return '48px'
+        case 'xl': return '64px'
+        default: return '48px'
+      }
     }
   },
   async fetch() {
