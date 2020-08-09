@@ -49,10 +49,16 @@
   </v-sheet>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
+  .ps__rail-y {
+    margin-right: 12px !important;
+  }
   .ps {
     height: calc(100vh - 1px - #{$header-height})
   }
+</style>
+
+<style lang="scss" scoped>
   .text-dense {
     line-height: 16px;
   }
