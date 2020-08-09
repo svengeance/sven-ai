@@ -1,3 +1,9 @@
+$header-height: 110px;
+
+html {
+    overflow: hidden !important;
+}
+
 .site-header-component {
-    height: 110px;
+    height: $header-height;
 }

@@ -17,8 +17,10 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/proxy": "^2.0.1",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "@nuxtjs/style-resources": "^1.0.0",
     "nuxt": "^2.14.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vue2-perfect-scrollbar": "^1.5.0"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.1",

@@ -19,7 +19,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s | Sven.ai',
+    titleTemplate: 'Sven | %s',
     title: 'Home',
     meta: [
       { charset: 'utf-8' },
@@ -40,10 +40,19 @@ export default {
   css: [
     '@styles/globals.scss'
   ],
+
+  /*
+  **  https://github.com/nuxt-community/style-resources-module
+  */
+  styleResources: {
+    scss: [ '~styles/globals.scss' ]
+  },
+
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/perfect-scrollbar.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -53,6 +62,7 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify',
     '@nuxt/typescript-build',
+    '@nuxtjs/style-resources',
   ],
   /*
   ** Nuxt.js modules
@@ -80,7 +90,7 @@ export default {
   ** https://github.com/nuxt-community/vuetify-module
   */
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ['~/styles/globals.scss'],
     theme: {
       dark: true,
       themes: {

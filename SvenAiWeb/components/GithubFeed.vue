@@ -25,35 +25,34 @@
       </v-row>
       <v-divider />
       <v-row>
-        <v-col v-for="feedItem of gitFeed" :key="feedItem.id" class="pb-0 pt-2" cols="12">
-          <div class="activity-item-container px-4 d-flex flex-column grey--text text--lighten-2">
-            <span class="activity-item-header text-caption grey--text">
-              <span class="float-left">{{ feedItem.date }} </span>
-              <span class="float-right"><a :href="feedItem.repo.url" target="_blank">{{ feedItem.repo.name }}</a></span>
-            </span>
-            <span class="text-body-1">
-              <v-icon class="blue--text text--darken-2">mdi-{{ feedItem.icon }}</v-icon>
-              {{ feedItem.action.verbSentence }}
-            </span>
-            <span v-if="feedItem.action.title" class="text-body-1">{{ feedItem.action.title }}</span>
-            <span v-if="feedItem.action.subtitle" class="text-dense text-subtitle-2">{{ feedItem.action.subtitle }}</span>
-            <span v-if="feedItem.action.caption" class="text-caption">{{ feedItem.action.caption }}</span>
-            <a :href="feedItem.action.link" class="text-caption mt-2" target="_blank">{{ feedItem.action.linkText }} </a>
-          </div>
-          <v-divider class="mt-2" />
-        </v-col>
-      </v-row>
-      <v-divider />
-      <v-row class="px-0">
-        <v-col cols="12">
-          <p>Footer</p>
-        </v-col>
+        <perfect-scrollbar>
+          <v-col v-for="feedItem of gitFeed" :key="feedItem.id" class="pb-0 pt-2" cols="12">
+            <div class="activity-item-container px-4 d-flex flex-column grey--text text--lighten-2">
+              <span class="activity-item-header text-caption grey--text">
+                <span class="float-left">{{ feedItem.date }} </span>
+                <span class="float-right"><a :href="feedItem.repo.url" target="_blank">{{ feedItem.repo.name }}</a></span>
+              </span>
+              <span class="text-body-1">
+                <v-icon class="blue--text text--darken-2">mdi-{{ feedItem.icon }}</v-icon>
+                {{ feedItem.action.verbSentence }}
+              </span>
+              <span v-if="feedItem.action.title" class="text-body-1">{{ feedItem.action.title }}</span>
+              <span v-if="feedItem.action.subtitle" class="text-dense text-subtitle-2">{{ feedItem.action.subtitle }}</span>
+              <span v-if="feedItem.action.caption" class="text-caption">{{ feedItem.action.caption }}</span>
+              <a :href="feedItem.action.link" class="text-caption mt-2" target="_blank">{{ feedItem.action.linkText }} </a>
+            </div>
+            <v-divider class="mt-2" />
+          </v-col>
+        </perfect-scrollbar>
       </v-row>
     </v-container>
   </v-sheet>
 </template>
 
 <style lang="scss" scoped>
+  .ps {
+    height: calc(100vh - 1px - #{$header-height})
+  }
   .text-dense {
     line-height: 16px;
   }
