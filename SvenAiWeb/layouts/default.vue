@@ -27,7 +27,7 @@
             </v-container>
           </v-main>
         </v-col>
-        <v-col cols="2" order="2" class="pa-0">
+        <v-col v-if="$vuetify.breakpoint.lgAndUp" cols="2" order="2" class="pa-0">
           <GithubFeed class=".d-inline-block" />
         </v-col>
       </v-row>
