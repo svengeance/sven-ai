@@ -9,18 +9,17 @@
               <v-img :src="gitProfile.avatarUrl" />
             </v-avatar>
           </a>
-          <div class="d-inline-block text-no-wrap feed-header-profile-text">
-            <a :href="gitProfile.htmlUrl" :class="{'text-h5': $vuetify.breakpoint.xl, 'text-h6': $vuetify.breakpoint.lgAndDown}" target="_blank" class="text-wrap mb-n1 text-dense grey--text text--lighten-1">
+          <div class="d-inline-block text-no-wrap feed-header-profile-text ml-2 mt-n1">
+            <a :href="gitProfile.htmlUrl" target="_blank" class="text-h5 text-wrap mb-n1 grey--text text--lighten-1">
               Svengeance
             </a>
             <br>
-            <span :class="{'text-subtitle-2': $vuetify.breakpoint.xl, 'text-caption': $vuetify.breakpoint.lgAndDown}" class="text-wrap text-denser grey--text text--lighten-2">{{ gitProfile.bio }}</span>
+            <span class="text-subtitle-2 text-wrap text-dense grey--text text--lighten-2">{{ gitProfile.bio }}</span>
           </div>
         </div>
         <div class="px-2 w-100 text-caption feed-footer-label grey--text text-dense">
           <span class="float-left">Repos: {{ gitProfile.numPublicRepos }} public, {{ gitProfile.numPrivateRepos }} private</span>
-          <br v-if="$vuetify.breakpoint.lgAndDown">
-          <span class="float-left float-xl-right">Gists: {{ gitProfile.numPublicGists }} public, {{ gitProfile.numPrivateGists }} private</span>
+          <span class="float-right">Gists: {{ gitProfile.numPublicGists }} public, {{ gitProfile.numPrivateGists }} private</span>
         </div>
       </div>
       <v-divider />
@@ -59,6 +58,9 @@
 </style>
 
 <style lang="scss" scoped>
+  .text-tiny-caption {
+    font-size: 0.7rem !important;
+  }
   .text-denser {
     line-height: 0.1;
   }
@@ -157,7 +159,7 @@ export default {
         case 'xs': return '32px'
         case 'sm': return '32px'
         case 'md': return '32px'
-        case 'lg': return '48px'
+        case 'lg': return '64px'
         case 'xl': return '64px'
         default: return '48px'
       }

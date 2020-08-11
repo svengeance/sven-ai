@@ -1,5 +1,6 @@
 <template>
   <v-app dark>
+    <!-- <MobileNavigation v-if="$vuetify.breakpoint.mdAndDown" /> -->
     <v-container fluid class="py-0">
       <v-row>
         <v-col order="1" class="pa-0">
@@ -27,7 +28,7 @@
             </v-container>
           </v-main>
         </v-col>
-        <v-col v-if="$vuetify.breakpoint.lgAndUp" cols="2" order="2" class="pa-0">
+        <v-col v-if="$vuetify.breakpoint.lgAndUp" cols="3" xl="2" order="2" class="pa-0">
           <GithubFeed class=".d-inline-block" />
         </v-col>
       </v-row>
