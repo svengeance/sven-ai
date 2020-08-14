@@ -10,7 +10,7 @@
           <span :class="{ 'text-subtitle-1': $vuetify.breakpoint.smAndUp, 'text-caption': $vuetify.breakpoint.xsOnly }" class="grey--text">C# Developer and Sometimes-Frontend Meddler</span>
         </div>
       </v-col>
-      <v-col id="links" v-if="$vuetify.breakpoint.mdAndUp" align-self="end" class="float-right pt-md-6 pt-lg-4 pr-md-4 header-links text-right justify-space-around">
+      <v-col id="links" v-if="$vuetify.breakpoint.mdAndUp" align-self="end" class="pl-0 float-right pt-md-6 pt-lg-4 pr-md-4 header-links text-right justify-space-around">
         <a class="ma-1 px-xl-2 px-lg-1 text-center" href="https://github.com/svengeance" target="_blank">
           <v-icon color="blue darken-1">mdi-github</v-icon>
           <p>GitHub</p>
