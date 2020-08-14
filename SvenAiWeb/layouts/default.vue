@@ -1,8 +1,8 @@
 <template>
   <v-app dark>
     <MobileNavigation v-if="$vuetify.breakpoint.mdAndDown" :links="tabs" />
-    <v-container fluid class="py-0">
-      <v-row>
+    <v-container fluid class="pa-0">
+      <v-row class="mx-0">
         <v-col order="1" class="pa-0">
           <no-ssr>
             <Header />

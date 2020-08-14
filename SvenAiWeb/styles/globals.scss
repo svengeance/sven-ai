@@ -7,3 +7,10 @@ html {
 .site-header-component {
     height: $header-height;
 }
+
+// Use this in great need to understand why some things have bounding boxes/etc
+// * {
+//     background: #000 !important;
+//     color: #0f0 !important;
+//     outline: solid #f00 1px !important;
+//   }

@@ -23,9 +23,9 @@
         </div>
       </div>
       <v-divider />
-      <v-row>
+      <v-row class="mx-0">
         <perfect-scrollbar>
-          <v-col v-for="feedItem of gitFeed" :key="feedItem.id" class="pb-0 pt-2" cols="12">
+          <v-col v-for="feedItem of gitFeed" :key="feedItem.id" class="px-0 pb-0 pt-2" cols="12">
             <div class="activity-item-container px-4 d-flex flex-column grey--text text--lighten-2">
               <span class="activity-item-header text-caption grey--text">
                 <span class="float-left">{{ feedItem.date }} </span>

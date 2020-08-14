@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-row id="header" class="site-header-component pt-md-2">
+    <v-row id="header" class="site-header-component pt-md-2 mx-0">
       <v-col v-if="$vuetify.breakpoint.mdAndUp" cols="3" lg="3" class="pt-md-6 pt-lg-4" align-self="start">
         <ContactMe />
       </v-col>

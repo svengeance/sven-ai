@@ -6,11 +6,9 @@
           <ContactMe />
         </v-list-item-content>
       </v-list-item>
-
       <v-divider />
-
-      <v-list dense>
-        <v-list-item v-for="link in links" :key="link.title">
+      <v-list>
+        <v-list-item v-for="link in links" :key="link.title" :to="link.link" link>
           <v-list-item-content>{{ link.title }}</v-list-item-content>
         </v-list-item>
       </v-list>
