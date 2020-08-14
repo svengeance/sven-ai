@@ -1,5 +1,5 @@
 <template>
-  <v-sheet elevation="6" class="root" height="100vh">
+  <v-sheet elevation="6" class="root px-xs-4 mx-xs-0 mx-sm-4 mx-lg-0" height="100vh">
     <v-container class="pa-0">
       <div class="site-header-component feed-header">
         <span class="text-caption feed-header-label grey--text text--darken-1 text-center font-weight-bold">Github Activity Feed</span>
@@ -72,6 +72,7 @@
   }
   .feed-header-content {
     height: 100%;
+    width: 100%;
     position: relative;
   }
   .feed-header-profile-text {
@@ -156,9 +157,9 @@ export default {
   computed: {
     avatarSize () {
       switch (this.$vuetify.breakpoint.name) {
-        case 'xs': return '32px'
-        case 'sm': return '32px'
-        case 'md': return '32px'
+        case 'xs': return '48px'
+        case 'sm': return '48px'
+        case 'md': return '48px'
         case 'lg': return '64px'
         case 'xl': return '64px'
         default: return '48px'
