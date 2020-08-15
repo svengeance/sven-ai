@@ -7,15 +7,15 @@
           <no-ssr>
             <Header />
           </no-ssr>
-          <v-tabs v-if="$vuetify.breakpoint.lgAndUp" background-color="transparent">
+          <v-tabs v-if="$vuetify.breakpoint.lgAndUp" background-color="transparent" class="pl-1">
             <v-tab v-for="tab in tabs" :key="tab.title" :to="tab.link" nuxt>
               {{ tab.title }}
             </v-tab>
           </v-tabs>
-          <v-main>
-            <v-container>
+          <v-main class="pt-4">
+            <perfect-scrollbar>
               <nuxt />
-            </v-container>
+            </perfect-scrollbar>
           </v-main>
         </v-col>
         <v-col v-if="$vuetify.breakpoint.lgAndUp" cols="3" xl="2" order="2" class="pa-0">
@@ -32,8 +32,8 @@ export default {
     return {
       tabs: [
         { title: 'About', link: '/about' },
-        { title: 'Cool Project', link: '/unique-projects' },
-        { title: 'Work Experience', link: '/work-experience' },
+        { title: 'Cool Projects', link: '/unique-projects' },
+        { title: 'Career', link: '/career' },
         { title: 'Languages & Tools', link: '/languages-and-tooling' },
         { title: 'Recent Blog Posts', link: '/recent-posts' }
       ]

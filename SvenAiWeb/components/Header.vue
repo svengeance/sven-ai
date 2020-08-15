@@ -12,15 +12,15 @@
       </v-col>
       <v-col id="links" v-if="$vuetify.breakpoint.mdAndUp" align-self="end" class="pl-0 float-right pt-md-6 pt-lg-4 pr-md-4 header-links text-right justify-space-around">
         <a class="ma-1 px-xl-2 px-lg-1 text-center" href="https://github.com/svengeance" target="_blank">
-          <v-icon color="blue darken-1">mdi-github</v-icon>
+          <v-icon color="blue">mdi-github</v-icon>
           <p>GitHub</p>
         </a>
         <a class="ma-1 px-xl-2 px-lg-1 text-center" href="https://www.linkedin.com/in/stevevernyi/" target="_blank">
-          <v-icon color="blue darken-1">mdi-linkedin</v-icon>
+          <v-icon color="blue">mdi-linkedin</v-icon>
           <p>LinkedIn</p>
         </a>
         <a class="ma-1 px-xl-2 px-lg-1 text-center" href="https://twitter.com/SvenVernyi" target="_blank">
-          <v-icon color="blue darken-1">mdi-twitter</v-icon>
+          <v-icon color="blue">mdi-twitter</v-icon>
           <p>Twitter</p>
         </a>
       </v-col>
