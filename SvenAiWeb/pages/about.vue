@@ -1,7 +1,21 @@
 <template>
   <v-layout class="content pt-2 pb-8">
     <v-row class="mx-0 mr-n2">
-      <v-col offset="1" offset.md="2" cols.md="8" cols="9">
+      <v-col offset="1" cols="10">
+        <v-img class="about-image float-left mr-4 mb-1" width="100%" max-width="600px"
+               src="/images/cat/cat_w1000.jpg"
+               sizes="(max-width: 2000px) 50vw, 600px"
+               srcset="/images/cat/cat_w384.jpg 384w,
+/images/cat/cat_w504.jpg 504w,
+/images/cat/cat_w606.jpg 606w,
+/images/cat/cat_w699.jpg 699w,
+/images/cat/cat_w790.jpg 790w,
+/images/cat/cat_w886.jpg 886w,
+/images/cat/cat_w975.jpg 975w,
+/images/cat/cat_w1000.jpg 1000w"
+        >
+          <span>Please enjoy this picture of my cats while I struggle to obtain my own</span>
+        </v-img>
         <p class="text-h2 grey--text text--lighten-3">
           Hello, world!
         </p>
@@ -65,11 +79,25 @@
 </template>
 
 <style lang="scss" scoped>
+  .about-image span {
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
   .content {
+    > div {
+      width: 100%; // Fixes the bounding box of the div below "layout.content>div" from overflowing
+    } // when going from larger to smaller layouts
     p {
       font-size: 1.25rem;
       line-height: 1.75rem;
-      margin-bottom: 24px;;
+      margin-bottom: 24px;
+
+      &.text-h2 {
+        line-height: 1;
+        margin-bottom: 0px;
+      }
     }
     .text-h6 {
       margin-bottom: 0;

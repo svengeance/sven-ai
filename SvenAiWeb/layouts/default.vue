@@ -13,9 +13,10 @@
             </v-tab>
           </v-tabs>
           <v-main class="pt-4">
-            <perfect-scrollbar>
+            <perfect-scrollbar v-if="showScrollBar">
               <nuxt />
             </perfect-scrollbar>
+            <nuxt v-else />
           </v-main>
         </v-col>
         <v-col v-if="$vuetify.breakpoint.lgAndUp" cols="3" xl="2" order="2" class="pa-0">
@@ -32,11 +33,16 @@ export default {
     return {
       tabs: [
         { title: 'About', link: '/about' },
-        { title: 'Cool Projects', link: '/unique-projects' },
+        { title: 'Projects', link: '/projects' },
         { title: 'Career', link: '/career' },
         { title: 'Languages & Tools', link: '/languages-and-tooling' },
         { title: 'Recent Blog Posts', link: '/recent-posts' }
       ]
+    }
+  },
+  computed: {
+    showScrollBar() {
+      return !['git-activity'].includes(this.$route.name)
     }
   }
 }
