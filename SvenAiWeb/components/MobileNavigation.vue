@@ -13,7 +13,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-btn id="btn-mobile-nav-menu" v-if="$vuetify.breakpoint.smAndDown" @click.stop="drawer = !drawer" height="36px" x-small outlined color="rgb(25, 118, 210)">
+    <v-btn id="btn-mobile-nav-menu" v-if="$vuetify.breakpoint.mdAndDown" @click.stop="drawer = !drawer" height="36px" x-small outlined color="rgb(25, 118, 210)">
       <v-icon color="blue" large>
         mdi-menu
       </v-icon>
@@ -47,7 +47,12 @@
 
 <script>
 export default {
-  props: ['links'],
+  props: {
+    links: {
+      required: true,
+      type: Array
+    }
+  },
   data() {
     return {
       drawer: null

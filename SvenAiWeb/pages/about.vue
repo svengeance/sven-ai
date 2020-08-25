@@ -6,13 +6,13 @@
                src="/images/cat/cat_w1000.jpg"
                sizes="(max-width: 2000px) 50vw, 600px"
                srcset="/images/cat/cat_w384.jpg 384w,
-/images/cat/cat_w504.jpg 504w,
-/images/cat/cat_w606.jpg 606w,
-/images/cat/cat_w699.jpg 699w,
-/images/cat/cat_w790.jpg 790w,
-/images/cat/cat_w886.jpg 886w,
-/images/cat/cat_w975.jpg 975w,
-/images/cat/cat_w1000.jpg 1000w"
+                      /images/cat/cat_w504.jpg 504w,
+                      /images/cat/cat_w606.jpg 606w,
+                      /images/cat/cat_w699.jpg 699w,
+                      /images/cat/cat_w790.jpg 790w,
+                      /images/cat/cat_w886.jpg 886w,
+                      /images/cat/cat_w975.jpg 975w,
+                      /images/cat/cat_w1000.jpg 1000w"
         >
           <span>Please enjoy this picture of my cats while I struggle to obtain my own</span>
         </v-img>

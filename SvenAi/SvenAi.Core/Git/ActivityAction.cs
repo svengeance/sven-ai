@@ -116,12 +116,10 @@ namespace SvenAi.Core.Git
             };
 
         private static string JString(in JsonElement element, string path)
-        {
-            return path.Split('.')
-                       .Aggregate(element, (ele, next)
-                            => char.IsNumber(next[0]) ? ele.EnumerateArray().ElementAt(int.Parse(next)) : ele.GetProperty(next)).GetRawText()
-                       .Trim('"');
-        }
+            => path.Split('.')
+                   .Aggregate(element, (ele, next)
+                        => char.IsNumber(next[0]) ? ele.EnumerateArray().ElementAt(int.Parse(next)) : ele.GetProperty(next)).GetRawText()
+                   .Trim('"');
 
 
         public static class EventType
