@@ -50,7 +50,7 @@
     position: absolute;
   }
   .card-container {
-    padding: 0px 5vw;
+    padding: 0px 5vw 48px;
   }
   .card-text-container {
     position: relative;
