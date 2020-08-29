@@ -1,5 +1,5 @@
 <template>
-  <v-row class="card-container">
+  <v-row class="card-container mx-0">
     <v-col :cols="cardColumns" v-for="(project, index) in projects" :key="project.name">
       <v-card :class="{ 'card-back': isFlipped(index)}" height="550px" class="mx-4 card">
         <v-list-item three-line>
@@ -14,13 +14,13 @@
           </v-list-item-content>
         </v-list-item>
 
-        <div v-if="isFlipped(index)" class="pt-4 card-text-container">
+        <div v-if="isFlipped(index)" v-touch:started.disablePassive.prevent.stop v-touch:moving.disablePassive.prevent.stop v-touch:stop.disablePassive.prevent.stop class="pt-4 card-text-container">
           <perfect-scrollbar>
             <v-card-text v-html="project.description" class="card-text" />
           </perfect-scrollbar>
         </div>
         <div v-else>
-          <v-img :src="project.mainImage" contain height="300" />
+          <v-img :src="project.mainImage" :height="cardImageHeight" contain />
 
           <v-card-text>
             <span class="font-weight-bold">Goal: </span>{{ project.goal }}
@@ -164,9 +164,18 @@ export default {
         : this.$vuetify.breakpoint.lgAndDown
           ? 6
           : 4
+    },
+    cardImageHeight() {
+      return this.cardColumns === 12
+        ? '150px'
+        : '250px'
     }
   },
   methods: {
+    test(args) {
+      args.preventDefault()
+      args.stopPropagation()
+    },
     flipCard(cardNumber) {
       const existingIndex = this.flippedCards.indexOf(cardNumber)
       if (existingIndex >= 0)

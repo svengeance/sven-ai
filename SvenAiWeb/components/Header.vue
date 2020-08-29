@@ -4,7 +4,7 @@
       <v-col v-if="$vuetify.breakpoint.lgAndUp" cols="3" lg="3" class="pt-md-6 pt-lg-4" align-self="start">
         <ContactMe />
       </v-col>
-      <v-col offset="2" offset-md="3" offset-lg="0" cols="8" lg="6" sm="12" md="6" align-self="center">
+      <v-col offset="2" offset-md="3" offset-lg="0" cols="8" lg="6" sm="8" md="6" align-self="center">
         <div class="d-flex flex-column text-center">
           <span :class="{ 'text-h4': $vuetify.breakpoint.smAndUp, 'text-h5': $vuetify.breakpoint.xsOnly }" class="grey--text">Stephen (Sven) Vernyi</span>
           <span :class="{ 'text-subtitle-1': $vuetify.breakpoint.smAndUp, 'text-caption': $vuetify.breakpoint.xsOnly }" class="grey--text">C# Developer and Sometimes-Frontend Meddler</span>
