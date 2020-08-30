@@ -14,8 +14,10 @@
           </v-list-item-content>
         </v-list-item>
 
-        <div v-if="isFlipped(index)" class="pt-4 card-text-container">
-          <v-card-text v-html="project.description" class="card-text" />
+        <div v-if="isFlipped(index)" v-touch:started.disablePassive.prevent.stop v-touch:moving.disablePassive.prevent.stop v-touch:stop.disablePassive.prevent.stop class="pt-4 card-text-container">
+          <perfect-scrollbar>
+            <v-card-text v-html="project.description" class="card-text" />
+          </perfect-scrollbar>
         </div>
         <div v-else>
           <v-img :src="project.mainImage" :height="cardImageHeight" contain />
@@ -53,7 +55,10 @@
   .card-text-container {
     position: relative;
     height: 400px;
-    overflow: scroll;
+
+    .ps {
+      height: 400px;
+    }
   }
   .card-text {
     position: relative;
