@@ -41,6 +41,7 @@
   .card {
     transition: transform 0.5s;
     transform-style: preserve-3d;
+    z-index: 9999;
   }
   .card-back {
     transform: rotateY(180deg) scaleX(-1);
