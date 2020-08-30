@@ -2,14 +2,14 @@ version: "3"
 services:
 
     api:
-        image: stevev0189/sven.ai:0.4.3
+        image: stevev0189/sven.ai:0.4.5
         ports:
             - "9001:9001"
         environment: 
             - AccessTokens__GitHub=$GITHUBACCESSTOKEN
 
     frontend:
-        image: stevev0189/sven.ai.web:0.4.3
+        image: stevev0189/sven.ai.web:0.4.5
         ports:
             - "5000:5000"
 
