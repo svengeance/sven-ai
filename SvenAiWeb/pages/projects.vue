@@ -14,7 +14,7 @@
           </v-list-item-content>
         </v-list-item>
 
-        <div v-if="isFlipped(index)" v-touch:started.disablePassive.prevent.stop v-touch:moving.disablePassive.prevent.stop v-touch:stop.disablePassive.prevent.stop class="pt-4 card-text-container">
+        <div v-if="isFlipped(index)" v-touch:started.disablePassive="test" v-touch:moving.disablePassive="test" v-touch:stop.disablePassive="test" class="pt-4 card-text-container">
           <perfect-scrollbar>
             <v-card-text v-html="project.description" class="card-text" />
           </perfect-scrollbar>
@@ -175,6 +175,7 @@ export default {
     test(args) {
       args.preventDefault()
       args.stopPropagation()
+      args.stopImmediatePropagation()
     },
     flipCard(cardNumber) {
       const existingIndex = this.flippedCards.indexOf(cardNumber)
