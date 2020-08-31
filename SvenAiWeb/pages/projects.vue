@@ -14,9 +14,9 @@
           </v-list-item-content>
         </v-list-item>
 
-        <div v-if="isFlipped(index)" v-touch:started.disablePassive="test" v-touch:moving.disablePassive="test" v-touch:stop.disablePassive="test" class="pt-4 card-text-container">
+        <div v-if="isFlipped(index)" class="pt-4 card-text-container">
           <perfect-scrollbar>
-            <v-card-text v-html="project.description" class="card-text" />
+            <v-card-text v-touch:started.disablePassive="test" v-touch:moving.disablePassive="test" v-touch:stop.disablePassive="test" v-html="project.description" class="card-text" />
           </perfect-scrollbar>
         </div>
         <div v-else>
@@ -41,7 +41,7 @@
   .card {
     transition: transform 0.5s;
     transform-style: preserve-3d;
-    z-index: 9999;
+    touch-action: none;
   }
   .card-back {
     transform: rotateY(180deg) scaleX(-1);
