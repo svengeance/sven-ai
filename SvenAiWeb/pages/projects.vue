@@ -14,9 +14,9 @@
           </v-list-item-content>
         </v-list-item>
 
-        <div v-if="isFlipped(index)" class="pt-4 card-text-container">
-          <perfect-scrollbar>
-            <v-card-text v-touch:started.disablePassive="test" v-touch:moving.disablePassive="test" v-touch:stop.disablePassive="test" v-html="project.description" class="card-text" />
+        <div v-touch:moving.disablePassive="test" v-if="isFlipped(index)" class="pt-4 card-text-container">
+          <perfect-scrollbar :options="cardScrollOptions">
+            <v-card-text v-html="project.description" class="card-text" />
           </perfect-scrollbar>
         </div>
         <div v-else>
@@ -41,7 +41,6 @@
   .card {
     transition: transform 0.5s;
     transform-style: preserve-3d;
-    touch-action: none;
   }
   .card-back {
     transform: rotateY(180deg) scaleX(-1);
@@ -55,7 +54,6 @@
   }
   .card-text-container {
     position: relative;
-    height: 400px;
 
     .ps {
       height: 400px;
@@ -71,6 +69,10 @@
 export default {
   data () {
     return {
+      cardScrollOptions: {
+        wheelPropagation: false,
+        handlers: [ 'wheel', 'touch', 'keyboard' ]
+      },
       flippedCards: [],
       projects: [
         {
@@ -174,9 +176,7 @@ export default {
   },
   methods: {
     test(args) {
-      args.preventDefault()
       args.stopPropagation()
-      args.stopImmediatePropagation()
     },
     flipCard(cardNumber) {
       const existingIndex = this.flippedCards.indexOf(cardNumber)
