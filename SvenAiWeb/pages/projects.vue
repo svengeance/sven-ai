@@ -65,7 +65,7 @@
   }
 </style>
 
-<script lang="ts">
+<script>
 export default {
   data () {
     return {
@@ -175,7 +175,7 @@ export default {
     }
   },
   methods: {
-    test(args: TouchEvent) {
+    test(args) {
       args.cancelBubble = true
       args.stopImmediatePropagation()
       args.stopPropagation()
