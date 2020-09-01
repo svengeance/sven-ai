@@ -57,7 +57,7 @@ export default {
   */
   plugins: [
     '@/plugins/perfect-scrollbar.js',
-    '@/plugins/touch-events.js'
+    { src: '@/plugins/touch-events.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
