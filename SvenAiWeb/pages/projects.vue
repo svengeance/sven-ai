@@ -14,7 +14,7 @@
           </v-list-item-content>
         </v-list-item>
 
-        <div v-touch:start.disablePassive.stop="test" v-touch:moving.disablePassive.stop="test" v-if="isFlipped(index)" touch:stop.disablePassive.stop="test" class="pt-4 card-text-container">
+        <div v-touch:moving.disablePassive.stop="test" v-if="isFlipped(index)" class="pt-4 card-text-container">
           <perfect-scrollbar :options="cardScrollOptions">
             <v-card-text v-html="project.description" class="card-text" />
           </perfect-scrollbar>
@@ -65,7 +65,7 @@
   }
 </style>
 
-<script>
+<script lang="ts">
 export default {
   data () {
     return {
@@ -175,8 +175,12 @@ export default {
     }
   },
   methods: {
-    test(args) {
+    test(args: TouchEvent) {
+      args.cancelBubble = true
+      args.stopImmediatePropagation()
       args.stopPropagation()
+      args.preventDefault()
+      console.log(args)
     },
     flipCard(cardNumber) {
       const existingIndex = this.flippedCards.indexOf(cardNumber)
