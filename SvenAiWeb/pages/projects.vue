@@ -56,12 +56,8 @@
     position: relative;
 
     .ps {
-      height: 400px;
+      height: 340px;
     }
-  }
-  .card-text {
-    position: relative;
-    height: 400px;
   }
 </style>
 
