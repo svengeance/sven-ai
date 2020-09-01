@@ -4,9 +4,9 @@
     <v-container fluid class="pa-0">
       <v-row class="mx-0">
         <v-col order="1" class="pa-0">
-          <no-ssr>
+          <client-only>
             <Header />
-          </no-ssr>
+          </client-only>
           <v-tabs v-if="$vuetify.breakpoint.lgAndUp" background-color="transparent" class="pl-1">
             <v-tab v-for="tab in tabs" :key="tab.title" :to="tab.link" nuxt>
               {{ tab.title }}
