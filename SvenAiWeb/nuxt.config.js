@@ -56,8 +56,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/perfect-scrollbar.js',
-    { src: '@/plugins/touch-events.js', ssr: false }
+    '@/plugins/perfect-scrollbar.js'
   ],
   /*
   ** Nuxt.js dev-modules
