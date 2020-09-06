@@ -1,21 +1,44 @@
 <template>
-  <v-layout>
-    <v-flex class="text-center">
-      <img src="/v.png" alt="Vuetify.js" class="mb-5">
-      <blockquote class="blockquote">
-        &#8220;First, solve the problem. Then, write the code.&#8221;
-        <footer>
-          <small>
-            <em>&mdash;John Johnson</em>
-          </small>
-        </footer>
-      </blockquote>
-    </v-flex>
-  </v-layout>
+  <v-container class="pb-6">
+    <p class="text-md-h6 text-subtitle-2 text-center">
+      The follow charts represent a broad self-assessment of familiarity and recency-of-use of typical development facets, lighter colors indicating higher competency
+    </p>
+    <v-divider />
+    <v-row align-content="center">
+      <v-col v-for="chart in charts" :key="chart.title" offset-lg="1" lg="10" cols="12" class="my-lg-8 my-sm-4">
+        <BarChart :values="chart.values" :labels="chart.labels" :title="chart.title" />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
+  data: () => ({
+    charts:
+    [
+      {
+        title: 'Languages',
+        labels: ['C#', 'Typescript', 'T-SQL', 'Python', 'Pascal'],
+        values: [10, 7, 6, 4, 3]
+      },
+      {
+        title: 'Frameworks & Libraries',
+        labels: ['ASP.NET Core', 'EF 6/EF Core', 'Vue JS', 'Anguar (v4+)'],
+        values: [10, 10, 7, 6]
+      },
+      {
+        title: 'Tools/IDEs',
+        labels: ['Visual Studio', 'VS Code', 'Docker', 'SQL Server MS'],
+        values: [10, 8, 6, 6]
+      },
+      {
+        title: 'Development Stack',
+        labels: ['Web', 'Desktop', 'API', 'Database', 'DevOps'],
+        values: [8, 6, 10, 7, 8]
+      }
+    ]
+  }),
   head() {
     return {
       title: 'Skillset'

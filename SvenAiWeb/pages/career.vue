@@ -1,5 +1,5 @@
 <template>
-  <v-timeline :dense="$vuetify.breakpoint.smAndDown">
+  <v-timeline :dense="$vuetify.breakpoint.smAndDown" class="px-md-16">
     <v-timeline-item v-for="item in timelineItems" :key="item.title" class="my-16" color="transparent">
       <template v-slot:opposite>
         <v-img :src="item.logo" height="300" contain />
@@ -62,7 +62,7 @@ export default {
         },
         {
           title: 'OSU Graduation',
-          subtitle: 'Geographic Information Science w/ Minors in German & Computer Software Engineering',
+          subtitle: 'Geographic Information Science, German, and Computer Software Engineering',
           icon: '/images/career/osu-icon.png',
           logo: '/images/career/osu-logo.png',
           description: `
