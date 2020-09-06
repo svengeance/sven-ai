@@ -1,11 +1,11 @@
 <template>
-  <v-container class="pb-6">
-    <p class="text-md-h6 text-subtitle-2 text-center">
-      The follow charts represent a broad self-assessment of familiarity and recency-of-use of typical development facets, lighter colors indicating higher competency
+  <v-container class="pb-6 px-xl-16 px-0">
+    <p class="text-md-h6 text-subtitle-2 text-center px-4">
+      The following charts represent a broad self-assessment of familiarity and recency-of-use of typical development facets, lighter colors indicating higher competency
     </p>
     <v-divider />
     <v-row align-content="center">
-      <v-col v-for="chart in charts" :key="chart.title" offset-lg="1" lg="10" cols="12" class="my-lg-8 my-sm-4">
+      <v-col v-for="chart in charts" :key="chart.title" offset-lg="1" lg="10" cols="12" class="my-lg-8 my-sm-4 px-xl-16">
         <BarChart :values="chart.values" :labels="chart.labels" :title="chart.title" />
       </v-col>
     </v-row>

@@ -31,7 +31,7 @@ export default {
   },
   data() {
     return {
-      gradient: ['deepskyblue', 'royalblue', 'blue', 'darkblue']
+      gradient: ['deepskyblue', 'dodgerblue', 'royalblue', 'darkblue']
     }
   },
   computed: {
