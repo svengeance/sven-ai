@@ -3,7 +3,7 @@
     <MobileNavigation v-if="$vuetify.breakpoint.mdAndDown" :links="tabs" />
     <v-container fluid class="pa-0">
       <v-row class="mx-0">
-        <v-col order="1" class="pa-0">
+        <v-col cols="9" xl="10" order="1" class="pa-0">
           <client-only>
             <Header />
           </client-only>
