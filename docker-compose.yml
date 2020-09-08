@@ -19,3 +19,10 @@ services:
             - "12111:12111"
         volumes:
             - ./nginx/conf.d:/etc/nginx/conf.d
+            - ./SvenAiBlog/public:/website/blog
+
+    blog:
+        build: ./SvenAiBlog
+        volumes:
+            - ./SvenAiBlog:/blog
+        command: generate
