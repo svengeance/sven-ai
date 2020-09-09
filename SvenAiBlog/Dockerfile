@@ -4,10 +4,11 @@ RUN \
  apt-get update && \
  apt-get install git -y && \
  rm -rf node_modules && \
- npm install --force && \
- npm install -g hexo-cli
+ npm install --force
 COPY . .
-RUN ["hexo", "generate"]
+RUN \
+ npm i -g hexo-cli && \
+ hexo generate
 
 FROM nginx:alpine
 COPY --from=build /blog/public /website/blog
