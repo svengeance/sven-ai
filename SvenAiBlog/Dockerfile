@@ -6,7 +6,7 @@ RUN \
  rm -rf node_modules && \
  npm install --force && \
  npm install -g hexo-cli
-COPY . .
+COPY ./SvenAiBlog .
 RUN ["hexo", "generate"]
 
 FROM nginx:alpine
