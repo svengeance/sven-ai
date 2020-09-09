@@ -66,7 +66,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Build SvenAi Docker Image
+      - name: Build SvenAiBlog Docker Image
         run: docker build -t stevev0189/sven.ai.blog:${{ needs.version-build.outputs.version }} SvenAiBlog
       
       - name: Log in to DockerHub Registry
