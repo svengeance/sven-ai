@@ -2,14 +2,14 @@ version: "3"
 services:
 
     api:
-        image: stevev0189/sven.ai:0.4.34
+        image: stevev0189/sven.ai:0.4.41
         ports:
             - "9001:9001"
         environment: 
             - AccessTokens__GitHub=$GITHUBACCESSTOKEN
 
     frontend:
-        image: stevev0189/sven.ai.web:0.4.34
+        image: stevev0189/sven.ai.web:0.4.41
         ports:
             - "5000:5000"
 
@@ -21,7 +21,7 @@ services:
             - ./nginx/portfolio.conf.d:/etc/nginx/conf.d
 
     blog:
-        image: stevev0189/sven.ai.blog:0.4.0
+        image: stevev0189/sven.ai.blog:0.4.41
         ports:
             - "8106:8106"
         volumes:
