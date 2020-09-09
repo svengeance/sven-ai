@@ -18,11 +18,11 @@ services:
         ports:
             - "12111:12111"
         volumes:
-            - ./nginx/conf.d:/etc/nginx/conf.d
-            - ./SvenAiBlog/public:/website/blog
+            - ./nginx/portfolio.conf.d:/etc/nginx/conf.d
 
     blog:
-        build: ./SvenAiBlog
+        image: stevev0189/sven.ai.blog:0.4.0
+        ports:
+            - "8106:8106"
         volumes:
-            - ./SvenAiBlog:/blog
-        command: generate
+            - ./nginx/blog.conf.d:/etc/nginx/conf.d

@@ -59,11 +59,28 @@ jobs:
       - name: Push the Built Docker Image
         run: docker push stevev0189/sven.ai:${{ needs.version-build.outputs.version }}
 
+  build-blog:
+    runs-on: ubuntu-latest
+    needs: version-build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build SvenAi Docker Image
+        run: docker build -t stevev0189/sven.ai.blog:${{ needs.version-build.outputs.version }} SvenAiBlog
+      
+      - name: Log in to DockerHub Registry
+        run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
+      
+      - name: Push the Built Docker Image
+        run: docker push stevev0189/sven.ai.blog:${{ needs.version-build.outputs.version }}
+
   update-docker-compose:
     runs-on: ubuntu-latest
     needs:
       - build-api
       - build-frontend
+      - build-blog
       - version-build
     steps:
       - name: Checkout
@@ -74,6 +91,9 @@ jobs:
 
       - name: Update docker-compose.yml for SvenAi
         run: sed -i -r "s/sven.ai:.+/sven.ai:${{ needs.version-build.outputs.version }}/g" docker-compose.yml
+
+      - name: Update docker-compose.yml for SvenAiBlog
+        run: sed -i -r "s/sven.ai.blog:.+/sven.ai.blog:${{ needs.version-build.outputs.version }}/g" docker-compose.yml
 
       - name: Add & Commit Updated docker-compose.yml
         uses: EndBug/add-and-commit@v3.0.0

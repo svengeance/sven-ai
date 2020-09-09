@@ -1,12 +1,12 @@
-FROM node:14-slim
-
-VOLUME /blog
-
+FROM node:14-slim AS build
+WORKDIR /blog 
 RUN \
  apt-get update && \
  apt-get install git -y && \
  npm install -g hexo-cli
+COPY . .
+RUN ["hexo", "generate"]
 
-WORKDIR /blog
-
-ENTRYPOINT [ "hexo" ]
+FROM nginx:alpine
+COPY --from=build /blog/public /website/blog
+EXPOSE 80 443
