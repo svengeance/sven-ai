@@ -19,10 +19,3 @@ services:
             - "12111:12111"
         volumes:
             - ./nginx/portfolio.conf.d:/etc/nginx/conf.d
-
-    blog:
-        image: stevev0189/sven.ai.blog:0.4.41
-        ports:
-            - "8106:8106"
-        volumes:
-            - ./nginx/blog.conf.d:/etc/nginx/conf.d
