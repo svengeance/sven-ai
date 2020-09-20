@@ -1,0 +1,3 @@
+[submodule "SvenAiBlog/themes/LoveIt"]
+	path = SvenAiBlog/themes/LoveIt
+	url = https://github.com/svengeance/LoveIt.git
