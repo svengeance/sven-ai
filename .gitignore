@@ -1,3 +1,10 @@
+# Custom
+
+# Public blog content
+SvenAiBlog/public/**/*
+
+# End Custom
+
 # dependencies
 node_modules
 package-lock.json
