@@ -1,11 +1,13 @@
 import colors from 'vuetify/es5/util/colors'
 
-const proxyConfig = () => process.env.DEPLOY_ENV == 'local' ? 'http://localhost:9001/api' : 'https://sven.ai/api';
+const isDev = () => process.env.DEPLOY_ENV == 'local';
+const apiProxyConfig = () => isDev() ? 'http://localhost:9001/api' : 'https://sven.ai/api';
+const blogProxyConfig = () => isDev() ? 'http://localhost:4000/blog' : 'https://sven.ai/blog';
 
 export default {
   components: true,
   mode: 'universal',
-  
+
   router: {
     extendRoutes(routes, resolve) {
       routes.push({
@@ -86,7 +88,8 @@ export default {
   },
 
   proxy: [
-    proxyConfig()
+    apiProxyConfig(),
+    blogProxyConfig()
   ],
 
   /*
