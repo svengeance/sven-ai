@@ -42,9 +42,6 @@ export default {
           ? 8
           : 5
     }
-  },
-  mounted() {
-    console.log(this.values)
   }
 }
 </script>
