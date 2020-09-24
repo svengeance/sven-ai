@@ -1,13 +1,16 @@
-baseURL = "http://example.org/"
+baseURL = ""
 # [en, zh-cn, fr, ...] determines default content language
 defaultContentLanguage = "en"
 # language code
 languageCode = "en"
+
 title = "Blog | Sven"
+
+# whether to use git commit log
+enableGitInfo = false
 
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
-
 [menu]
   [[menu.main]]
     identifier = "posts"
@@ -40,6 +43,7 @@ theme = "LoveIt"
 [params]
   #  LoveIt theme version
   version = "0.2.X"
+  enableGitInfo = true
   # site description
   description = "Sven - Ramblings from Ohio"
   # site keywords
@@ -102,7 +106,7 @@ theme = "LoveIt"
     #  Header title config
     [params.header.title]
       # URL of the LOGO
-      logo = "/site-icons/mally_av.png"
+      logo = ""
       # title name
       name = "Home"
       # you can add extra information before the name (HTML format is supported), such as icons
@@ -158,7 +162,7 @@ theme = "LoveIt"
       # Gravatar Email for preferred avatar in home page
       gravatarEmail = ""
       # URL of avatar shown in home page
-      avatarURL = ""
+      avatarURL = "/site-icons/mally_av.png"
       #  title shown in home page (HTML format is supported)
       title = "The Wheel of Time turns, and blogs come and pass, leaving memories that become legend..."
       # subtitle shown in home page
@@ -314,7 +318,7 @@ theme = "LoveIt"
       Twitter = true
       Facebook = true
       Linkedin = true
-      Whatsapp = true
+      Whatsapp = false
       Pinterest = false
       Tumblr = false
       HackerNews = false
@@ -322,19 +326,19 @@ theme = "LoveIt"
       VK = false
       Buffer = false
       Xing = false
-      Line = true
+      Line = false
       Instapaper = false
       Pocket = false
       Digg = false
       Stumbleupon = false
       Flipboard = false
-      Weibo = true
+      Weibo = false
       Renren = false
-      Myspace = true
-      Blogger = true
+      Myspace = false
+      Blogger = false
       Baidu = false
       Odnoklassniki = false
-      Evernote = true
+      Evernote = false
       Skype = false
       Trello = false
       Mix = false
@@ -355,28 +359,6 @@ theme = "LoveIt"
         repo = ""
         clientId = ""
         clientSecret = ""
-      # Valine comment config
-      [params.page.comment.valine]
-        enable = false
-        appId = ""
-        appKey = ""
-        placeholder = ""
-        avatar = "mp"
-        meta= ""
-        pageSize = 10
-        lang = ""
-        visitor = true
-        recordIP = true
-        highlight = true
-        enableQQ = false
-        serverURLs = ""
-        #  emoji data file name, default is "google.yml"
-        # ("apple.yml", "google.yml", "facebook.yml", "twitter.yml")
-        # located in "themes/LoveIt/assets/data/emoji/" directory
-        # you can store your own data files in the same path under your project:
-        # "assets/data/emoji/"
-        emoji = ""
-      # Facebook comment config
       [params.page.comment.facebook]
         enable = false
         width = "100%"
