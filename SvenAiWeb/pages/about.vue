@@ -16,16 +16,16 @@
         >
           <span>Please enjoy this picture of my cats while I struggle to obtain my own</span>
         </v-img>
-        <p class="text-h2 grey--text text--lighten-3">
+        <p class="text-h2 grey--text text--lighten-2">
           Hello, world!
         </p>
         <v-divider />
-        <p class="text-h5 grey--text text--lighten-3 pt-6">
+        <p class="text-h5 grey--text text--lighten-1 pt-6">
           I'm Stephen Vernyi, aka Sven, developing software primarily in C#/.NET using a wide array of Microsoft/Azure products and SDKs.
           I am currently based in Columbus Ohio, working at Select Sires Inc as a senior software developer.
           My day-to-day has me working with various teams across different technology stacks in order to produce the best applications our industry has ever known.
         </p>
-        <div class="text-body-1 grey--text text--lighten-2">
+        <div class="text-body-1 grey--text text--lighten-1">
           <p class="text-h6 text--lighten-3 text-decoration-underline">
             University
           </p>

@@ -10,11 +10,11 @@
             </v-avatar>
           </a>
           <div class="d-inline-block text-no-wrap feed-header-profile-text ml-2 mt-n1">
-            <a :href="gitProfile.htmlUrl" target="_blank" class="text-h5 text-wrap mb-n1 grey--text text--lighten-1">
+            <a :href="gitProfile.htmlUrl" target="_blank" class="text-h5 text-wrap mb-n1 grey--text text--lighten-2">
               Svengeance
             </a>
             <br>
-            <span class="text-subtitle-2 text-wrap text-dense grey--text text--lighten-2">{{ gitProfile.bio }}</span>
+            <span class="text-subtitle-2 text-wrap text-dense grey--text">{{ gitProfile.bio }}</span>
           </div>
         </div>
         <div class="px-2 w-100 text-caption feed-footer-label grey--text text-dense">

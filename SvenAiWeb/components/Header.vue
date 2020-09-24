@@ -1,16 +1,16 @@
 <template>
   <div>
     <v-row id="header" class="site-header-component pt-md-2 mx-0">
-      <v-col v-if="$vuetify.breakpoint.lgAndUp" cols="3" lg="3" class="pt-md-6 pt-lg-4" align-self="start">
+      <v-col v-if="$vuetify.breakpoint.lgAndUp" cols="3" lg="3" class="pt-md-8 pt-lg-6" align-self="start">
         <ContactMe />
       </v-col>
       <v-col offset="2" offset-md="3" offset-lg="0" cols="8" lg="6" sm="8" md="6" align-self="center">
         <div class="d-flex flex-column text-center">
-          <span :class="{ 'text-h4': $vuetify.breakpoint.smAndUp, 'text-h5': $vuetify.breakpoint.xsOnly }" class="grey--text">Stephen (Sven) Vernyi</span>
-          <span :class="{ 'text-subtitle-1': $vuetify.breakpoint.smAndUp, 'text-caption': $vuetify.breakpoint.xsOnly }" class="grey--text">C# Developer and Sometimes-Frontend Meddler</span>
+          <span :class="{ 'text-h4': $vuetify.breakpoint.smAndUp, 'text-h5': $vuetify.breakpoint.xsOnly }" class="grey--text text--lighten-2">Stephen (Sven) Vernyi</span>
+          <span :class="{ 'text-subtitle-1': $vuetify.breakpoint.smAndUp, 'text-caption': $vuetify.breakpoint.xsOnly }" class="grey--text text--lighten-1">C# Developer and Sometimes-Frontend Meddler</span>
         </div>
       </v-col>
-      <v-col id="links" v-if="$vuetify.breakpoint.lgAndUp" align-self="end" class="pl-0 float-right pt-md-6 pt-lg-4 pr-md-4 header-links text-right justify-space-around">
+      <v-col id="links" v-if="$vuetify.breakpoint.lgAndUp" align-self="end" class="pl-0 float-right pt-md-8 pt-lg-6 pr-md-4 header-links text-right justify-space-around">
         <a class="ma-1 px-xl-2 px-lg-1 text-center" href="https://github.com/svengeance" target="_blank">
           <v-icon color="blue">mdi-github</v-icon>
           <p>GitHub</p>

@@ -18,12 +18,6 @@
         mdi-menu
       </v-icon>
     </v-btn>
-
-    <v-fab-transition>
-      <v-btn id="btn-mobile-gitfeed-toggle" :to="fabRoute" :key="fabRoute" color="rgb(25, 118, 210)" dark fixed right bottom fab>
-        <v-icon>{{ btnIcon }}</v-icon>
-      </v-btn>
-    </v-fab-transition>
   </div>
 </template>
 
@@ -57,10 +51,6 @@ export default {
     return {
       drawer: null
     }
-  },
-  computed: {
-    btnIcon() { return this.$route.name === 'git-activity' ? 'mdi-account-tie' : 'mdi-code-json' },
-    fabRoute() { return this.$route.name === 'git-activity' ? '/about' : '/git-activity' }
   }
 }
 </script>
