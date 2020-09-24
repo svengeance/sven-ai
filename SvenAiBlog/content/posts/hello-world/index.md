@@ -43,14 +43,14 @@ As a member of a development team I have two objectives that keeps me at the top
   better products to our customers, and to make our company more attractive to other developers
 
   - Balance the timely needs of the business with the desire to produce clean, well-architected code that stands the test of time:
-  extensible enough to meet future needs, readable enough to be picked up by anyone, and documented enough to give anyone confidence to hop on and contribute
+  extensible enough to meet future needs, readable enough to be picked up by anyone, and documented enough to give my team confidence to hop on and contribute
 
 ## Why blog?
 
 My goal with this platform is to document some of the things I do, or have done, in my day-to-day as a developer that may make others' lives easier.
 I like to think I'm thorough when approaching development tasks, and this usually allows me to find ~~lazy~~ efficient ways at achieving those tasks.
 
-In my relatively short time as a professional developer, it has been through others' tech blogs such ast his one that I have been able to put together
+In my relatively short time as a professional developer, it has been through others' tech blogs such as this one that I have been able to put together
 various pieces of knowledge to make complete products. My hope is that I can _further_ that trend of giving, to write that article that somebody **really** needed
 at that point in time.
 

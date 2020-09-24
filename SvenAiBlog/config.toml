@@ -54,7 +54,7 @@ theme = "LoveIt"
   gitRepo = "https://github.com/svengeance/svengeance.github.io"
   #  which hash function used for SRI, when empty, no SRI is used
   # ("sha256", "sha384", "sha512", "md5")
-  fingerprint = "sha256"
+  fingerprint = ""
   #  date format
   dateFormat = "2006-01-02"
   # website images for Open Graph and Twitter Cards
@@ -108,11 +108,11 @@ theme = "LoveIt"
       # URL of the LOGO
       logo = ""
       # title name
-      name = "Home"
+      name = "Blog Home"
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
       # you can add extra information after the name (HTML format is supported), such as icons
-      post = "&emsp;<a href=\"https://www.sven.ai\">About Me</a>"
+      post = "&emsp;<a href=\"https://www.sven.ai\">Portfolio Website</a>"
       #  whether to use typeit animation for title name
       typeit = false
 
