@@ -20,13 +20,16 @@
 export default {
   props: {
     title: {
-      type: String
+      type: String,
+      default: ''
     },
     values: {
-      type: Array
+      type: Array,
+      default: () => ([])
     },
     labels: {
-      type: Array
+      type: Array,
+      default: () => ([])
     }
   },
   data() {

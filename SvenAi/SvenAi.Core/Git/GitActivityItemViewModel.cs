@@ -39,5 +39,15 @@ namespace SvenAi.Core.Git
 
             return activity;
         }
+
+        /// <summary>
+        /// Returns the pathmapping that maps from an API call of this Activity's type using its Action URL to the
+        /// human-friendly HTML url. For most resources in the git API, this is simply html_url
+        /// </summary>
+        public string ApiHtmlUrlPath
+            => ActivityType switch
+               {
+                   _ => "html_url"
+               };
     }
 }

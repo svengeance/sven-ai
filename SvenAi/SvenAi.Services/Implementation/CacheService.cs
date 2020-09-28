@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using LazyCache;
 using Microsoft.VisualBasic;
 using Octokit;
+using SvenAi.Core;
 using SvenAi.Core.Git;
 using SvenAi.Services.Extensions;
 using SvenAi.Services.Interface;
@@ -29,11 +30,10 @@ namespace SvenAi.Services.Implementation
             => await _appCache.GetOrAddAsync(
                 $"GitUser_{userName}",
                 async () => MapToGitUserViewModel(await _gitClientFactory.CreateClient().User.Current()), 
-                DateTimeOffset.Now.AddMinutes(1));
+                DateTimeOffset.Now.AddMinutes(5));
 
-        public async Task<List<GitActivityItemViewModel>> GetCachedGitActivity(string userName)
-        {
-            var data = await _appCache.GetOrAddAsync(
+        public async Task<List<GitActivityItemViewModel>> GetCachedGitActivity(string userName) =>
+            await _appCache.GetOrAddAsync(
                 $"GitActivity_{userName}",
                 async () =>
                 {
@@ -41,22 +41,27 @@ namespace SvenAi.Services.Implementation
                     var rawActivities = await client.GetAllUserEventsRaw(userName);
                     var activities = ReadActivityJson(rawActivities.Body);
 
+                    // Because Git returns some data as API links to other data, we must hydrate the ViewModels with human-readable data
+                    foreach (var activity in activities)
+                    {
+                        if (activity.Action.Link.Contains("api.github.com"))
+                        {
+                            var realHtmlUrl = await _appCache.GetOrAddAsync(activity.Action.Link, async () => await client.ExtractProperty(activity.Action.Link, activity.ApiHtmlUrlPath));
+                            activity.Action.Link = realHtmlUrl;
+                        }
+
+                        if (activity.Repo.Url.Contains("api.github.com"))
+                            activity.Repo.Url = await _appCache.GetOrAddAsync(activity.Repo.Url, async () => await client.ExtractProperty(activity.Repo.Url, SvenAiConstants.GitApi.RepositoryHtmlUrlPropertyPath));
+                    }
+
                     return activities;
-                });
+                }, DateTimeOffset.Now.AddMinutes(30));
 
-            return data;
-        }
-
-        private List<GitActivityItemViewModel> ReadActivityJson(string activityJson)
-        {
-            var jdoc = JsonDocument.Parse(activityJson);
-            var result = jdoc.RootElement
-                             .EnumerateArray()
-                             .Select(GitActivityItemViewModel.FromJsonElement)
-                             .ToList();
-
-            return result;
-        }
+        private List<GitActivityItemViewModel> ReadActivityJson(string activityJson) =>
+            JsonDocument.Parse(activityJson).RootElement
+                        .EnumerateArray()
+                        .Select(GitActivityItemViewModel.FromJsonElement)
+                        .ToList();
 
         private static GitUserViewModel MapToGitUserViewModel(User user) =>
             new GitUserViewModel

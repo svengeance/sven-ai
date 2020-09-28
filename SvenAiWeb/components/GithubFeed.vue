@@ -14,7 +14,7 @@
               Svengeance
             </a>
             <br>
-            <span class="text-subtitle-2 text-wrap text-dense grey--text">{{ gitProfile.bio }}</span>
+            <span class="text-subtitle-2 text-wrap text-dense grey--text text--lighten-1">{{ gitProfile.bio }}</span>
           </div>
         </div>
         <div class="px-2 w-100 text-caption feed-footer-label grey--text text-dense">
@@ -107,8 +107,9 @@ const iconMap = {
   MemberEvent: 'account-group',
   PublicEvent: 'party-popper',
   PullRequestEvent: 'source-pull',
+  PullRequestReviewEvent: 'comment-search',
   PullRequestReviewCommentEvent: 'comment-eye',
-  PushEvent: 'playlist-plus',
+  PushEvent: 'source-commit',
   ReleaseEvent: 'bullhorn',
   SponsorshipEvent: 'charity',
   WatchEvent: 'star-circle'

@@ -2,11 +2,11 @@
 using System.Linq;
 using System.Text.Json;
 using Humanizer;
-using static SvenAi.Core.Git.ActivityAction.EventType;
+using static SvenAi.Core.SvenAiConstants.GitEventType;
 
 namespace SvenAi.Core.Git
 {
-    public class ActivityAction
+    public partial class ActivityAction
     {
         private const int MaxTitleLength = 50;
         private const int MaxSubTitleLength = 200;
@@ -94,11 +94,17 @@ namespace SvenAi.Core.Git
                     $"Comments: {JString(payload, "pull_request.comments")}, Commits: {JString(payload, "pull_request.commits")}",
                     JString(payload, "pull_request.html_url"),
                     "View Pull Request"),
-                PullRequestReviewCommentEvent => new ActivityAction($"{JString(payload, "action")} a review on a pull request",
+                PullRequestReviewEvent => new ActivityAction($"{JString(payload, "action")} a review on a pull request",
+                    JString(payload, "pull_request.title"),
+                    "",
+                    $"Review state: {JString(payload, "review.state")}",
+                    JString(payload, "review.html_url"),
+                    "View Review"),
+                PullRequestReviewCommentEvent => new ActivityAction($"{JString(payload, "action")} a comment on a review of a pull request",
                     JString(payload, "pull_request.title"),
                     JString(payload, "comment.body"),
-                    $"Comments: {JString(payload, "pull_request.comments")}, Commits: {JString(payload, "pull_request.commits")}",
-                    JString(payload, "comment.html_url"),
+                    "",
+                    JString(payload, "comment._links.html.href"),
                     "View comment"),
                 PushEvent => new ActivityAction($"Pushed {"commits".ToQuantity(int.Parse(JString(payload, "size")))} to {JString(payload, "ref").Split('/').Last()}",
                     "",
@@ -112,6 +118,13 @@ namespace SvenAi.Core.Git
                     "",
                     JString(payload, "browser_download_url"),
                     "Download Release"),
+                WatchEvent => new ActivityAction($"Starred a repository",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""),
+
                 _ => EmptyAction
             };
 
@@ -120,25 +133,5 @@ namespace SvenAi.Core.Git
                    .Aggregate(element, (ele, next)
                         => char.IsNumber(next[0]) ? ele.EnumerateArray().ElementAt(int.Parse(next)) : ele.GetProperty(next)).GetRawText()
                    .Trim('"');
-
-
-        public static class EventType
-        {
-            public const string CommitCommentEvent = "CommitCommentEvent";
-            public const string CreateEvent = "CreateEvent";
-            public const string DeleteEvent = "DeleteEvent";
-            public const string ForkEvent = "ForkEvent";
-            public const string GollumEvent = "GollumEvent";
-            public const string IssueCommentEvent = "IssueCommentEvent";
-            public const string IssuesEvent = "IssuesEvent";
-            public const string MemberEvent = "MemberEvent";
-            public const string PublicEvent = "PublicEvent";
-            public const string PullRequestEvent = "PullRequestEvent";
-            public const string PullRequestReviewCommentEvent = "PullRequestReviewCommentEvent";
-            public const string PushEvent = "PushEvent";
-            public const string ReleaseEvent = "ReleaseEvent";
-            public const string SponsorshipEvent = "SponsorshipEvent";
-            public const string WatchEvent = "WatchEvent";
-        }
     }
 }
