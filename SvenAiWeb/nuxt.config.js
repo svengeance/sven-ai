@@ -68,6 +68,7 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxt/typescript-build',
     '@nuxtjs/style-resources',
+    '@nuxtjs/google-analytics'
   ],
   /*
   ** Nuxt.js modules
@@ -78,6 +79,15 @@ export default {
     '@nuxt/http',
     '@nuxtjs/proxy'
   ],
+
+  /*
+  ** Google Analytics module configuration
+  ** See https://github.com/nuxt-community/analytics-module
+  */
+  googleAnalytics: {
+    id: 'UA-178644638-2'
+  },
+
   /*
   ** Http module configuration
   ** See https://http.nuxtjs.org/guide/
@@ -85,11 +95,6 @@ export default {
   http: {
     proxy: true
   },
-
-  proxy: [
-    apiProxyConfig(),
-    blogProxyConfig()
-  ],
 
   /*
   ** vuetify module configuration
