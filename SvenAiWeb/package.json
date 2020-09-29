@@ -1,7 +1,7 @@
 {
-  "name": "sven-ai-web",
+  "name": "SvenAi",
   "version": "1.0.0",
-  "description": "Website for sven.ai",
+  "description": "Website for Stephen (Sven) Vernyi",
   "author": "Steve",
   "private": true,
   "scripts": {
@@ -13,19 +13,19 @@
   },
   "dependencies": {
     "@mdi/js": "^5.6.55",
-    "@nuxt/http": "^0.5.12",
+    "@nuxt/http": "^0.5.13",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/proxy": "^2.0.1",
     "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.0.0",
-    "nuxt": "^2.14.4",
+    "nuxt": "^2.14.6",
     "vue-template-compiler": "^2.6.12",
     "vue2-perfect-scrollbar": "^1.5.0"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.14.4",
+    "@nuxt/types": "^2.14.6",
     "@nuxt/typescript-build": "^2.0.3",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.2.0",
@@ -33,7 +33,7 @@
     "@nuxtjs/vuetify": "^1.11.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
-    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-nuxt": "^0.5.2",
     "node-sass": "^4.14.1",
     "sass-loader": "^7.3.1"
