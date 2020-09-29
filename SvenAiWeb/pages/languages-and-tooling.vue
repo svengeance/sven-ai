@@ -29,8 +29,8 @@ export default {
       },
       {
         title: 'Tools/IDEs',
-        labels: ['Visual Studio', 'VS Code', 'Docker', 'SQL Server MS'],
-        values: [10, 8, 6, 6]
+        labels: ['Visual Studio', 'VS Code', 'Git', 'Docker', 'MS-SQL'],
+        values: [10, 8, 8, 6, 6]
       },
       {
         title: 'Development Stack',
