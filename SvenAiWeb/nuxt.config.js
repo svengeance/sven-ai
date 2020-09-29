@@ -25,7 +25,24 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Professional/portfolio website for Stephen Vernyi (Sven)' }
+      { hid: 'description', name: 'description', content: 'Professional/portfolio website for Stephen Vernyi (Sven)' },
+      { hid: 'author', name: 'author', content: 'Sven' },
+      { hid: 'publisher', name: 'publisher', content: 'Sven' },
+      { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'Sven | About' },
+      { hid: 'theme-color', name: 'theme-color', content: 'dark' },
+      { hid: 'og:title', name: 'og:title', content: 'Sven Vernyi' },
+      { hid: 'og:description', name: 'og:description', content: 'Professional/portfolio website for Stephen Vernyi (Sven)' },
+      { hid: 'og:type', name: 'og:type', content: 'Website' },
+      { hid: 'og:url', name: 'og:url', content: 'https://sven.ai' },
+      { hid: 'og:image', name: 'og:image', content: '/mally_avatar.png' },
+      { hid: 'og:locale', name: 'og:locale', content: 'en-EN' },
+      { hid: 'og:site_name', name: 'og:site_name', content: 'Sven | About' },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
+      { hid: 'twitter:site', name: 'twitter:site', content: 'SvenVernyi' },
+      { hid: 'twitter:creator', name: 'twitter:creator', content: 'SvenVernyi' },
+      { hid: 'twitter:title', name: 'twitter:title', content: 'Sven | About' },
+      { hid: 'twitter:description', name: 'twitter:description', content: 'Professional/portfolio website for Stephen Vernyi (Sven)' },
+      { hid: 'twitter:image', name: 'twitter:image', content: '/mally_avatar.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
@@ -77,7 +94,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/pwa',
     '@nuxt/http',
-    '@nuxtjs/proxy'
+    '@nuxtjs/proxy',
+    '@nuxtjs/sitemap'
   ],
 
   /*
@@ -89,13 +107,24 @@ export default {
   },
 
   /*
+  ** Sitemap  module configuration
+  ** See https://github.com/nuxt-community/sitemap-module
+  */
+  sitemap: {
+    // options
+  },
+
+  /*
   ** Http module configuration
   ** See https://http.nuxtjs.org/guide/
   */
   http: {
     proxy: true
   },
-
+  proxy: [
+    apiProxyConfig(),
+    blogProxyConfig()
+  ],
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
