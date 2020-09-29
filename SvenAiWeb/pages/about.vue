@@ -1,6 +1,6 @@
 <template>
   <v-layout class="content pt-2 pb-8">
-    <v-row class="mx-0 mr-n2">
+    <v-row class="mx-0">
       <v-col offset="1" cols="10">
         <v-img class="about-image float-left mr-4 mb-1" width="100%" max-width="600px"
                src="/images/cat/cat_w1000.jpg"
@@ -16,17 +16,13 @@
         >
           <span>Please enjoy this picture of my cats while I struggle to obtain my own</span>
         </v-img>
-        <p class="text-h2 grey--text text--lighten-2">
-          Hello, world!
-        </p>
-        <v-divider />
-        <p class="text-h5 grey--text text--lighten-1 pt-6">
+        <p :class="{ 'text-h5': $vuetify.breakpoint.mdAndUp, 'text-h6': $vuetify.breakpoint.smAndDown }" class="grey--text text--lighten-1">
           I'm Stephen Vernyi, aka Sven, developing software primarily in C#/.NET using a wide array of Microsoft/Azure products and SDKs.
           I am currently based in Columbus Ohio, working at Select Sires Inc as a senior software developer.
           My day-to-day has me working with various teams across different technology stacks in order to produce the best applications our industry has ever known.
         </p>
-        <div class="text-body-1 grey--text text--lighten-1">
-          <p class="text-h6 text--lighten-3 text-decoration-underline">
+        <div :class="{ 'text-body-1': $vuetify.breakpoint.mdAndUp, 'text-body-2': $vuetify.breakpoint.smAndDown }" class="grey--text text--lighten-1 pt-6">
+          <p class="text-h6 text--lighten-2 text-decoration-underline">
             University
           </p>
           <p>
@@ -34,7 +30,7 @@
             While this coursework gave me valuable insights into a unique field, I spent the majority of my time maximizing my interactions with the software development
             portion of this degree. I'd already known going into University that I loved writing software and developing applications, and nothing about that had changed.
           </p>
-          <p class="text-h6 text--lighten-3 text-decoration-underline">
+          <p class="text-h6 text--lighten-2 text-decoration-underline">
             Internships
           </p>
           <p>
@@ -43,7 +39,7 @@
             working on web interfaces and client applications through some now-dated web stacks such as JQuery, Bootstrap (2), KnockoutJS, etc. This combination gave me the breadth of
             knowledge I needed to put forward my own personal projects, and through this experience I landed my first job at Select Sires.
           </p>
-          <p class="text-h6 text--lighten-3 text-decoration-underline">
+          <p class="text-h6 text--lighten-2 text-decoration-underline">
             Current Work
           </p>
           <p>
@@ -61,7 +57,7 @@
             It was during this time that I was able to take the lead on some larger architectural decisions - upgrading to .NET Core for our primary API, refactoring older code that needed some love,
             and ultimately breaking down our monolithic codebases into more manageable sections.
           </p>
-          <p class="text-h6 text--lighten-3 text-decoration-underline">
+          <p class="text-h6 text--lighten-2 text-decoration-underline">
             Hobbies
           </p>
           <p>
@@ -93,11 +89,6 @@
       font-size: 1.25rem;
       line-height: 1.75rem;
       margin-bottom: 24px;
-
-      &.text-h2 {
-        line-height: 1;
-        margin-bottom: 0px;
-      }
     }
     .text-h6 {
       margin-bottom: 0;

@@ -1,6 +1,6 @@
 <template>
-  <v-row class="justify-center">
-    <v-col cols="10" md="9">
+  <v-row class="justify-center mx-0">
+    <v-col cols="12" md="9">
       <GithubFeed />
     </v-col>
   </v-row>

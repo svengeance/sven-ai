@@ -62,7 +62,7 @@ export default {
         },
         {
           title: 'OSU Graduation',
-          subtitle: 'Geographic Information Science, German, and Computer Software Engineering',
+          subtitle: 'BA - Geographic Information Science',
           icon: '/images/career/osu-icon.png',
           logo: '/images/career/osu-logo.png',
           description: `
