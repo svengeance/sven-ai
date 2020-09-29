@@ -32,7 +32,7 @@
                 <span class="float-right"><a :href="feedItem.repo.url" target="_blank">{{ feedItem.repo.name }}</a></span>
               </span>
               <span class="text-body-1">
-                <v-icon class="blue--text text--darken-2">mdi-{{ feedItem.icon }}</v-icon>
+                <v-icon class="blue--text text--darken-2">{{ feedItem.icon }}</v-icon>
                 {{ feedItem.action.verbSentence }}
               </span>
               <span v-if="feedItem.action.title" class="text-body-1">{{ feedItem.action.title }}</span>
@@ -96,23 +96,24 @@
 </style>
 
 <script>
+import { mdiAccountGroup, mdiBug, mdiBullhorn, mdiCharity, mdiCommentAlert, mdiCommentEye, mdiCommentSearch, mdiCommentText, mdiFileDocumentMultiple, mdiPartyPopper, mdiSourceBranchPlus, mdiSourceBranchRemove, mdiSourceCommit, mdiSourceFork, mdiSourcePull, mdiStarCircle } from '@mdi/js'
 const iconMap = {
-  CommitCommentEvent: 'comment-text',
-  CreateEvent: 'source-branch-plus',
-  DeleteEvent: 'source-branch-remove',
-  ForkEvent: 'source-fork',
-  GollumEvent: 'file-document-multiple',
-  IssueCommentEvent: 'comment-alert',
-  IssuesEvent: 'bug',
-  MemberEvent: 'account-group',
-  PublicEvent: 'party-popper',
-  PullRequestEvent: 'source-pull',
-  PullRequestReviewEvent: 'comment-search',
-  PullRequestReviewCommentEvent: 'comment-eye',
-  PushEvent: 'source-commit',
-  ReleaseEvent: 'bullhorn',
-  SponsorshipEvent: 'charity',
-  WatchEvent: 'star-circle'
+  CommitCommentEvent: mdiCommentText,
+  CreateEvent: mdiSourceBranchPlus,
+  DeleteEvent: mdiSourceBranchRemove,
+  ForkEvent: mdiSourceFork,
+  GollumEvent: mdiFileDocumentMultiple,
+  IssueCommentEvent: mdiCommentAlert,
+  IssuesEvent: mdiBug,
+  MemberEvent: mdiAccountGroup,
+  PublicEvent: mdiPartyPopper,
+  PullRequestEvent: mdiSourcePull,
+  PullRequestReviewEvent: mdiCommentSearch,
+  PullRequestReviewCommentEvent: mdiCommentEye,
+  PushEvent: mdiSourceCommit,
+  ReleaseEvent: mdiBullhorn,
+  SponsorshipEvent: mdiCharity,
+  WatchEvent: mdiStarCircle
 }
 
 export default {

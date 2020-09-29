@@ -7,7 +7,6 @@ const blogProxyConfig = () => isDev() ? 'http://localhost:4000/blog' : 'https://
 export default {
   components: true,
   mode: 'universal',
-
   router: {
     extendRoutes(routes, resolve) {
       routes.push({
@@ -111,7 +110,14 @@ export default {
           success: colors.green.accent3
         }
       }
-    }
+    },
+    defaultAssets: {
+      icons: false
+    },
+    icons: {
+      iconfont: 'mdiSvg'
+    },
+    treeShake: true
   },
   /*
   ** Build configuration
@@ -132,6 +138,7 @@ export default {
           }
         })
       }
-    }
+    },
+    analyze: true
   }
 }

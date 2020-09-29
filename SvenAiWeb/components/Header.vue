@@ -12,15 +12,15 @@
       </v-col>
       <v-col id="links" v-if="$vuetify.breakpoint.lgAndUp" align-self="end" class="pl-0 float-right pt-md-8 pt-lg-6 pr-md-4 header-links text-right justify-space-around">
         <a class="ma-1 px-xl-2 px-lg-1 text-center" href="https://github.com/svengeance" target="_blank">
-          <v-icon color="blue">mdi-github</v-icon>
+          <v-icon color="blue">{{ icons.github }}</v-icon>
           <p>GitHub</p>
         </a>
         <a class="ma-1 px-xl-2 px-lg-1 text-center" href="https://www.linkedin.com/in/stevevernyi/" target="_blank">
-          <v-icon color="blue">mdi-linkedin</v-icon>
+          <v-icon color="blue">{{ icons.github }}</v-icon>
           <p>LinkedIn</p>
         </a>
         <a class="ma-1 px-xl-2 px-lg-1 text-center" href="https://twitter.com/SvenVernyi" target="_blank">
-          <v-icon color="blue">mdi-twitter</v-icon>
+          <v-icon color="blue">{{ icons.twitter }}</v-icon>
           <p>Twitter</p>
         </a>
       </v-col>
@@ -42,3 +42,18 @@
     }
   }
 </style>
+
+<script>
+import { mdiGithub, mdiLinkedin, mdiTwitter } from '@mdi/js'
+export default {
+  data: () => {
+    return {
+      icons: {
+        github: mdiGithub,
+        linkedin: mdiLinkedin,
+        twitter: mdiTwitter
+      }
+    }
+  }
+}
+</script>

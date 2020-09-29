@@ -15,7 +15,7 @@
     </v-navigation-drawer>
     <v-btn id="btn-mobile-nav-menu" v-if="$vuetify.breakpoint.mdAndDown" @click.stop="drawer = !drawer" height="36px" x-small outlined color="rgb(25, 118, 210)">
       <v-icon color="blue" large>
-        mdi-menu
+        {{ icons.menu }}
       </v-icon>
     </v-btn>
   </div>
@@ -40,6 +40,7 @@
 </style>
 
 <script>
+import { mdiMenu } from '@mdi/js'
 export default {
   props: {
     links: {
@@ -49,6 +50,9 @@ export default {
   },
   data() {
     return {
+      icons: {
+        menu: mdiMenu
+      },
       drawer: null
     }
   }
