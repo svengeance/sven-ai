@@ -4,7 +4,7 @@
       <v-card :class="{ 'card-back': isFlipped(index)}" height="550px" class="mx-4 card">
         <v-list-item three-line>
           <v-list-item-avatar tile>
-            <v-img :src="require('~/assets/' + project.icon + '?size=48')" contain />
+            <v-img :src="require('~/assets/' + project.icon + '?size=48')" :alt="project.name + ' Icon'" contain />
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title class="headline">
@@ -20,7 +20,7 @@
           </perfect-scrollbar>
         </div>
         <div v-else>
-          <v-img :src="require('~/assets/' + project.mainImage + '?size=600')" :height="cardImageHeight" contain />
+          <v-img :src="require('~/assets/' + project.mainImage + '?size=600')" :height="cardImageHeight" :alt="project.name + ' Image'" contain />
 
           <v-card-text>
             <span class="font-weight-bold">Goal: </span>{{ project.goal }}

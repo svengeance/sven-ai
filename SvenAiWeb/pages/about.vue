@@ -2,15 +2,15 @@
   <v-layout class="content pt-2 pb-8">
     <v-row class="mx-0">
       <v-col offset="1" cols="10">
-        <v-img :src="require('~/assets/cat/cat.jpg?size=600')" class="about-image float-left mr-4 mb-1" width="100%" max-width="600px">
+        <v-img :src="require('~/assets/cat/cat.jpg?size=600')" class="about-image float-left mr-4 mb-1" width="100%" max-width="600px" alt="Image of my cats while I'm too shy to get my own.">
           <span>Please enjoy this picture of my cats while I struggle to obtain my own</span>
         </v-img>
-        <p :class="{ 'text-h5': $vuetify.breakpoint.mdAndUp, 'text-h6': $vuetify.breakpoint.smAndDown }" class="grey--text text--lighten-1">
+        <section :class="{ 'text-h5': $vuetify.breakpoint.mdAndUp, 'text-h6': $vuetify.breakpoint.smAndDown }" class="grey--text text--lighten-1">
           I'm Stephen Vernyi, aka Sven, developing software primarily in C#/.NET using a wide array of Microsoft/Azure products and SDKs.
           I am currently based in Columbus Ohio, working at Select Sires Inc as a senior software developer.
           My day-to-day has me working with various teams across different technology stacks in order to produce the best applications our industry has ever known.
-        </p>
-        <div :class="{ 'text-body-1': $vuetify.breakpoint.mdAndUp, 'text-body-2': $vuetify.breakpoint.smAndDown }" class="grey--text text--lighten-1 pt-6">
+        </section>
+        <section :class="{ 'text-body-1': $vuetify.breakpoint.mdAndUp, 'text-body-2': $vuetify.breakpoint.smAndDown }" class="grey--text text--lighten-1 pt-6">
           <p class="text-h6 text--lighten-2 text-decoration-underline">
             University
           </p>
@@ -57,7 +57,7 @@
             I play mostly competitive multiplayer games that I can enjoy with friends, such as Overwatch, Smite, Starcraft 2, and League of Legends.
             The layout for this website is actually heavily inspired by the League client.
           </p>
-        </div>
+        </section>
       </v-col>
     </v-row>
   </v-layout>

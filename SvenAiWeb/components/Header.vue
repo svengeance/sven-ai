@@ -1,13 +1,17 @@
 <template>
-  <div>
+  <header>
     <v-row id="header" class="site-header-component pt-md-2 mx-0">
       <v-col v-if="$vuetify.breakpoint.lgAndUp" cols="3" lg="3" class="pt-md-8 pt-lg-6" align-self="start">
         <ContactMe />
       </v-col>
       <v-col offset="2" offset-md="3" offset-lg="0" cols="9" lg="6" sm="8" md="6" align-self="center">
         <div class="d-flex flex-column text-center">
-          <span :class="{ 'text-h4': $vuetify.breakpoint.smAndUp, 'text-h6': $vuetify.breakpoint.xsOnly }" class="grey--text text--lighten-2">Stephen (Sven) Vernyi</span>
-          <span :class="{ 'text-subtitle-1': $vuetify.breakpoint.smAndUp, 'text-caption': $vuetify.breakpoint.xsOnly }" class="grey--text text--lighten-1">C# Developer and Sometimes-Frontend Meddler</span>
+          <h1 :class="{ 'text-h4': $vuetify.breakpoint.smAndUp, 'text-h6': $vuetify.breakpoint.xsOnly }" class="grey--text text--lighten-2">
+            Stephen (Sven) Vernyi
+          </h1>
+          <h2 :class="{ 'text-subtitle-1': $vuetify.breakpoint.smAndUp, 'text-caption': $vuetify.breakpoint.xsOnly }" class="grey--text text--lighten-1">
+            Full Stack .NET Dev &amp; Azure Enthusiast
+          </h2>
         </div>
       </v-col>
       <v-col id="links" v-if="$vuetify.breakpoint.lgAndUp" align-self="end" class="pl-0 float-right pt-md-8 pt-lg-6 pr-md-4 header-links text-right justify-space-around">
@@ -26,7 +30,7 @@
       </v-col>
     </v-row>
     <v-divider />
-  </div>
+  </header>
 </template>
 
 <style lang="scss" scoped>

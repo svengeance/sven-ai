@@ -25,7 +25,7 @@
     #btn-mobile-nav-menu {
         left:2%;
         position: fixed;
-        top: 24px;
+        top: 32px;
         z-index: 999;
     }
 
