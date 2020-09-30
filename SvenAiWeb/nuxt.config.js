@@ -6,7 +6,7 @@ const blogProxyConfig = () => isDev() ? 'http://localhost:4000/blog' : 'https://
 
 export default {
   components: true,
-  mode: 'universal',
+
   router: {
     extendRoutes(routes, resolve) {
       routes.push({
@@ -49,7 +49,6 @@ export default {
       { rel: "apple-touch-icon", sizes: "180x180", href: "/favicon/apple-touch-icon.png" },
       { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon/favicon-32x32.png" },
       { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon/favicon-16x16.png" },
-      { rel: "manifest", href: "/favicon/site.webmanifest" }
     ]
   },
   /*
@@ -85,7 +84,8 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxt/typescript-build',
     '@nuxtjs/style-resources',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@aceforth/nuxt-optimized-images'
   ],
   /*
   ** Nuxt.js modules
@@ -97,6 +97,18 @@ export default {
     '@nuxtjs/proxy',
     '@nuxtjs/sitemap'
   ],
+
+  /*
+  * Image Optimizer Module Configuration
+  * https://marquez.co/docs/nuxt-optimized-images/configuration
+  */
+  optimizedImages: {
+    optimizeImages: true,
+    optimizeImagesInDev: true,
+    responsive: {
+      format: 'png'
+    }
+  },
 
   /*
   ** Google Analytics module configuration

@@ -2,11 +2,11 @@
   <v-timeline :dense="$vuetify.breakpoint.smAndDown" class="px-md-16">
     <v-timeline-item v-for="item in timelineItems" :key="item.title" class="my-16" color="transparent">
       <template v-slot:opposite>
-        <v-img :src="item.logo" height="300" contain />
+        <v-img :src="require('~/assets/' + item.logo + '?size=500')" height="300" contain />
       </template>
       <template v-slot:icon>
         <v-avatar tile color="transparent">
-          <img :src="item.icon">
+          <img :src="require('~/assets/' + item.icon + '?size=48')">
         </v-avatar>
       </template>
       <v-card class="mx-4 card">
@@ -41,8 +41,8 @@ export default {
         {
           title: 'Select Sires',
           subtitle: 'Senior Software Developer - Contractor',
-          icon: '/images/career/ssi-icon.png',
-          logo: '/images/career/ssi-logo.png',
+          icon: 'career/ssi-icon.png',
+          logo: 'career/ssi-logo.png',
           description: `
             <p>
               Select Sires was my first job in my professional career coming out of University. I started off working as mid-level developer working on the C# APIs in the company.
@@ -63,8 +63,8 @@ export default {
         {
           title: 'OSU Graduation',
           subtitle: 'BA - Geographic Information Science',
-          icon: '/images/career/osu-icon.png',
-          logo: '/images/career/osu-logo.png',
+          icon: 'career/osu-icon.png',
+          logo: 'career/osu-logo.png',
           description: `
             <p>
               Time at <b>The</b> Ohio State University was some of the best in my life. The various people I'd met, events I'd attended, and classes I was able to take all helped me figure out who I was
@@ -83,8 +83,8 @@ export default {
         {
           title: 'ACUHO-I',
           subtitle: 'Assistant Software Developer - Intern',
-          icon: '/images/career/acuhoi-icon.png',
-          logo: '/images/career/acuhoi-logo.png',
+          icon: 'career/acuhoi-icon.png',
+          logo: 'career/acuhoi-logo.png',
           description: `
             <p>
               My second internship, ACUHO-I, was my kick-starter into C# and Web Development. Prior, I had only had experience with the likes of Java, C++, and Python, and none of them really <i>clicked</i> for me the way C# does.
@@ -105,8 +105,8 @@ export default {
         {
           title: 'Vogelsang USA',
           subtitle: 'Assistant UI Developer - Intern',
-          icon: '/images/career/vogelsang-icon.png',
-          logo: '/images/career/vogelsang-logo.png',
+          icon: 'career/vogelsang-icon.png',
+          logo: 'career/vogelsang-logo.png',
           description: `
             <p>
               My first ever experience with professional development was at Vogelsang USA. Headquartered in Germany, the company has subsidiaries all over the world, including one not too far

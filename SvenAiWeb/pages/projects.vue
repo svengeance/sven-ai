@@ -4,7 +4,7 @@
       <v-card :class="{ 'card-back': isFlipped(index)}" height="550px" class="mx-4 card">
         <v-list-item three-line>
           <v-list-item-avatar tile>
-            <v-img :src="project.icon" contain />
+            <v-img :src="require('~/assets/' + project.icon + '?size=48')" contain />
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title class="headline">
@@ -20,7 +20,7 @@
           </perfect-scrollbar>
         </div>
         <div v-else>
-          <v-img :src="project.mainImage" :height="cardImageHeight" contain />
+          <v-img :src="require('~/assets/' + project.mainImage + '?size=600')" :height="cardImageHeight" contain />
 
           <v-card-text>
             <span class="font-weight-bold">Goal: </span>{{ project.goal }}
@@ -72,10 +72,10 @@ export default {
       flippedCards: [],
       projects: [
         {
-          icon: 'favicon/android-chrome-192x192.png',
+          icon: 'projects/sven-ai/icon.png',
           name: 'Sven.ai',
           subtitle: 'Modern, Progressive Web App Serving as my Personal Website',
-          mainImage: '/images/projects/sven-ai/techstack.png',
+          mainImage: 'projects/sven-ai/techstack.png',
           goal: 'Learn a new frontend framework, as well as to learn some of the the modern web application features such as Service Side Rendering, Progressive Web Apps, as well as learning how to perform Search Engine Optimization',
           description: `
           <p>
@@ -95,10 +95,10 @@ export default {
           `
         },
         {
-          icon: 'images/projects/ef-core/icon.png',
+          icon: 'projects/ef-core/icon.png',
           name: 'Entity Framework Core',
           subtitle: 'The Motherload of all .NET ORMs that I Enjoy Contributing to',
-          mainImage: '/images/projects/ef-core/ef-repo.png',
+          mainImage: 'projects/ef-core/ef-repo.png',
           goal: 'Work with highly skilled professionals, to learn better how to use one of the most complex and customizable tools for database operations in C#, and to do what I can to make Entity Framework the best it can be',
           description: `
           <p>
@@ -114,9 +114,9 @@ export default {
         },
         {
           name: 'Select Sires - Bull Search',
-          icon: 'images/projects/bull-search/icon.png',
+          icon: 'projects/bull-search/icon.png',
           subtitle: `Industry's Leading Search Tool, Built With Pure Performance in Mind`,
-          mainImage: 'images/projects/bull-search/bsw-grid.png',
+          mainImage: 'projects/bull-search/bsw-grid.png',
           goal: 'Produce a Search Tool that beats out all of our competitors by using the latest technologies .NET and Angular has to offer and build a high-performance, highly optimized tool that is capable of serving requests of any complexity that scales for any number of users',
           description: `
           <p>
@@ -134,9 +134,9 @@ export default {
         },
         {
           name: 'Various Other Open-Source Projects',
-          icon: 'images/projects/open-source/icon.png',
+          icon: 'projects/open-source/icon.png',
           subtitle: 'Projects I Have Used and Found Value, and in Return, Contributed to',
-          mainImage: 'images/projects/open-source/pull-requests.png',
+          mainImage: 'projects/open-source/pull-requests.png',
           goal: 'Identify areas in projects where I may be of assistance in order to give back to the open source community, from which we all graciously borrow. Sometimes to fulfill a missing gap in a product that I have as an immediate need',
           description: `
           <p>

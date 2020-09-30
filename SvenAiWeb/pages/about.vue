@@ -2,18 +2,7 @@
   <v-layout class="content pt-2 pb-8">
     <v-row class="mx-0">
       <v-col offset="1" cols="10">
-        <v-img class="about-image float-left mr-4 mb-1" width="100%" max-width="600px"
-               src="/images/cat/cat_w1000.jpg"
-               sizes="(max-width: 2000px) 50vw, 600px"
-               srcset="/images/cat/cat_w384.jpg 384w,
-                      /images/cat/cat_w504.jpg 504w,
-                      /images/cat/cat_w606.jpg 606w,
-                      /images/cat/cat_w699.jpg 699w,
-                      /images/cat/cat_w790.jpg 790w,
-                      /images/cat/cat_w886.jpg 886w,
-                      /images/cat/cat_w975.jpg 975w,
-                      /images/cat/cat_w1000.jpg 1000w"
-        >
+        <v-img :src="require('~/assets/cat/cat.jpg?size=600')" class="about-image float-left mr-4 mb-1" width="100%" max-width="600px">
           <span>Please enjoy this picture of my cats while I struggle to obtain my own</span>
         </v-img>
         <p :class="{ 'text-h5': $vuetify.breakpoint.mdAndUp, 'text-h6': $vuetify.breakpoint.smAndDown }" class="grey--text text--lighten-1">
