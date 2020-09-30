@@ -6,7 +6,7 @@
         <div class="feed-header-content text-dense d-inline-block py-6 px-2">
           <a :href="gitProfile.htmlUrl" class="float-left" target="_blank">
             <v-avatar :size="avatarSize">
-              <v-img :src="gitProfile.avatarUrl" alt="Github Profile picture" />
+              <v-img :src="gitProfile.avatarUrl + '&s=64'" alt="Github Profile picture" />
             </v-avatar>
           </a>
           <div class="d-inline-block text-no-wrap feed-header-profile-text ml-2 mt-n1">
