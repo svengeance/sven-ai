@@ -24,7 +24,8 @@
       </div>
       <v-divider />
       <v-row class="mx-0">
-        <perfect-scrollbar>
+        <v-skeleton-loader v-if="loading" :loading="loading" type="article@10" width="100%" height="1200px" />
+        <perfect-scrollbar v-if="!loading" :options="gitScrollOptions">
           <v-col v-for="feedItem of gitFeed" :key="feedItem.id" class="px-0 pb-0 pt-2" cols="12">
             <div class="activity-item-container px-4 d-flex flex-column grey--text text--lighten-2">
               <span class="activity-item-header text-caption grey--text">
@@ -119,6 +120,10 @@ const iconMap = {
 export default {
   data() {
     return {
+      gitScrollOptions: {
+        wheelPropagation: false,
+        suppressScrollX: true
+      },
       gitProfile: {
         avatarUrl: '',
         blog: '',
@@ -130,30 +135,7 @@ export default {
         numPublicRepos: 0,
         numPublicGists: 0
       },
-      gitFeed: [
-        {
-          id: '',
-          date: '',
-          isPublic: false,
-          activityType: '',
-          actor: {
-            displayName: 'svengeance',
-            avatarUrl: ''
-          },
-          repo: {
-            name: '',
-            url: ''
-          },
-          action: {
-            verbSentence: '',
-            title: '',
-            subtitle: '',
-            caption: '',
-            link: '',
-            linkText: ''
-          }
-        }
-      ]
+      gitFeed: []
     }
   },
   computed: {
@@ -166,6 +148,9 @@ export default {
         case 'xl': return '64px'
         default: return '48px'
       }
+    },
+    loading () {
+      return this.gitFeed.length === 0
     }
   },
   async fetch() {
