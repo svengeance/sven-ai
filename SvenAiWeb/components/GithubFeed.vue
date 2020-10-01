@@ -1,7 +1,7 @@
 <template>
   <v-sheet elevation="6" class="root px-xs-4 mx-xs-0 mx-sm-4 mx-lg-0" height="100vh">
     <v-container class="pa-0">
-      <div class="site-header-component feed-header">
+      <div v-if="!profileLoading" class="site-header-component feed-header">
         <span class="text-caption feed-header-label grey--text text--darken-1 text-center font-weight-bold">Github Activity Feed</span>
         <div class="feed-header-content text-dense d-inline-block py-6 px-2">
           <a :href="gitProfile.htmlUrl" class="float-left" target="_blank">
@@ -22,9 +22,13 @@
           <span class="float-right">Gists: {{ gitProfile.numPublicGists }} public, {{ gitProfile.numPrivateGists }} private</span>
         </div>
       </div>
+      <div v-else class="site-header-component feed-header">
+        <v-skeleton-loader loading type="list-item-avatar-two-line" width="100%" />
+        <v-skeleton-loader loading type="list-item" width="100%" />
+      </div>
       <v-divider />
       <v-row class="mx-0">
-        <v-skeleton-loader v-if="loading" :loading="loading" type="article@10" width="100%" height="1200px" />
+        <v-skeleton-loader v-if="feedLoading" loading type="article@10" width="100%" height="1200px" />
         <perfect-scrollbar v-if="!loading" :options="gitScrollOptions">
           <v-col v-for="feedItem of gitFeed" :key="feedItem.id" class="px-0 pb-0 pt-2" cols="12">
             <div class="activity-item-container px-4 d-flex flex-column grey--text text--lighten-2">
@@ -124,17 +128,7 @@ export default {
         wheelPropagation: false,
         suppressScrollX: true
       },
-      gitProfile: {
-        avatarUrl: '',
-        blog: '',
-        bio: '',
-        hireable: false,
-        htmlUrl: '',
-        numPrivateGists: 0,
-        numPrivateRepos: 0,
-        numPublicRepos: 0,
-        numPublicGists: 0
-      },
+      gitProfile: { },
       gitFeed: []
     }
   },
@@ -149,8 +143,11 @@ export default {
         default: return '48px'
       }
     },
-    loading () {
+    feedLoading () {
       return this.gitFeed.length === 0
+    },
+    profileLoading () {
+      return !this.gitProfile.avatarUrl
     }
   },
   async fetch() {
