@@ -24,7 +24,7 @@ export default {
       },
       {
         title: 'Frameworks & Libraries',
-        labels: ['ASP.NET Core', 'EF 6/EF Core', 'Vue JS', 'Anguar (v4+)', 'Redux'],
+        labels: ['ASP.NET Core', 'EF Core', 'Vue JS', 'Angular (v4+)', 'Redux'],
         values: [10, 10, 7, 6, 5]
       },
       {
