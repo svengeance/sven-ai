@@ -31,7 +31,7 @@ FreeDesktop.org [specifies an expected format](https://www.freedesktop.org/softw
 <!--more-->
 
 {{< admonition type=note title="Small Update" >}}
-After futher perusal for yet more /etc/os-release information, I sumbled upon [this GitHub Repository by higanworks](https://github.com/higanworks/os_catalog) that is much more complete,
+After further perusal for yet more /etc/os-release information, I sumbled upon [this GitHub Repository by higanworks](https://github.com/higanworks/os_catalog) that is much more complete,
 and well maintained. Give it a look!
 {{< /admonition >}}
 
