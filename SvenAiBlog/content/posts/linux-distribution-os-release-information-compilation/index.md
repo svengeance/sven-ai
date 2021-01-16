@@ -135,7 +135,7 @@ and well maintained. Give it a look!
 >PRETTY_NAME="Linux Mint 20"  
 >VERSION_ID="20"  
 >HOME_URL="https://www.linuxmint.com"  
->SUPPORT_URL="https://forums.ubuntu.com/"  
+>SUPPORT_URL="http://forums.ubuntu.com/"  
 >BUG_REPORT_URL="http://linuxmint-troubleshooting-guide.readthedocs.io/en/latest/"  
 >PRIVACY_POLICY_URL="https://linuxmint.com"  
 >VERSION_CODENAME=ulyana  

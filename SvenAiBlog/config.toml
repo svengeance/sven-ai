@@ -73,9 +73,9 @@ theme = "LoveIt"
     # Safari mask icon color
     iconColor = "#5bbad5"
     # Windows v8-10 tile color
-    tileColor = "#da532c"
+    tileColor = "#2d89ef"
 
-  #  Search config
+  #  Search config 
   [params.search]
     enable = true
     # type of search engine ("lunr", "algolia")
@@ -110,9 +110,9 @@ theme = "LoveIt"
       # title name
       name = "Blog Home"
       # you can add extra information before the name (HTML format is supported), such as icons
-      pre = ""
+      pre = "<img src=\"/favicon-32x32.png\" style=\"max-width:32px;margin-bottom:-6px\">"
       # you can add extra information after the name (HTML format is supported), such as icons
-      post = "&emsp;<a href=\"https://www.sven.ai\">Portfolio Website</a>"
+      post = "&emsp;<img src=\"/site-icons/sven_ai_icon.png\" style=\"max-width:28px;margin-bottom:-6px;margin-right:8px\"><a href=\"https://www.sven.ai\">Portfolio Website</a>"
       #  whether to use typeit animation for title name
       typeit = false
 
