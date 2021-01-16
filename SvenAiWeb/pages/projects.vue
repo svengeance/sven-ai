@@ -1,6 +1,6 @@
 <template>
   <v-row class="card-container mx-0">
-    <v-col :cols="cardColumns" v-for="(project, index) in projects" :key="project.name">
+    <v-col v-for="(project, index) in projects" :key="project.name" :cols="cardColumns">
       <v-card :class="{ 'card-back': isFlipped(index)}" height="550px" class="mx-4 card">
         <v-list-item three-line>
           <v-list-item-avatar tile>
@@ -14,9 +14,9 @@
           </v-list-item-content>
         </v-list-item>
 
-        <div @touchmove.stop v-if="isFlipped(index)" class="pt-4 card-text-container">
+        <div v-if="isFlipped(index)" class="pt-4 card-text-container" @touchmove.stop>
           <perfect-scrollbar :options="cardScrollOptions">
-            <v-card-text v-html="project.description" class="card-text" />
+            <v-card-text class="card-text" v-html="project.description" />
           </perfect-scrollbar>
         </div>
         <div v-else>
@@ -28,7 +28,7 @@
         </div>
 
         <v-card-actions class="card-actions">
-          <v-btn @click="flipCard(index)" text color="blue text--darken-1">
+          <v-btn text color="blue text--darken-1" @click="flipCard(index)">
             Read More
           </v-btn>
         </v-card-actions>
@@ -156,6 +156,11 @@ export default {
       ]
     }
   },
+  head() {
+    return {
+      title: 'Past Projects'
+    }
+  },
   computed: {
     cardColumns() {
       return this.$vuetify.breakpoint.smAndDown
@@ -180,11 +185,6 @@ export default {
     },
     isFlipped(cardNumber) {
       return this.flippedCards.includes(cardNumber)
-    }
-  },
-  head() {
-    return {
-      title: 'Past Projects'
     }
   }
 }

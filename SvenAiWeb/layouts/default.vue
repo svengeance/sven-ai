@@ -11,7 +11,7 @@
             </v-tab>
           </v-tabs>
           <v-main class="pt-4">
-            <perfect-scrollbar ref="scroll" v-if="showScrollBar">
+            <perfect-scrollbar v-if="showScrollBar" ref="scroll">
               <nuxt />
             </perfect-scrollbar>
             <nuxt v-else />

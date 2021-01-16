@@ -1,10 +1,10 @@
 <template>
   <v-timeline :dense="$vuetify.breakpoint.smAndDown" class="px-md-16">
     <v-timeline-item v-for="item in timelineItems" :key="item.title" class="my-16" color="transparent">
-      <template v-slot:opposite>
+      <template #opposite>
         <v-img :src="require('~/assets/' + item.logo + '?size=500')" :alt="item.title + ' Logo'" height="300" contain />
       </template>
-      <template v-slot:icon>
+      <template #icon>
         <v-avatar tile color="transparent">
           <img :src="require('~/assets/' + item.icon + '?size=48')" :alt="item.title + ' Icon'">
         </v-avatar>

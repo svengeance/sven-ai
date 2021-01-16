@@ -13,7 +13,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-btn id="btn-mobile-nav-menu" v-if="$vuetify.breakpoint.mdAndDown" @click.stop="drawer = !drawer" height="36px" x-small outlined color="rgb(25, 118, 210)">
+    <v-btn v-if="$vuetify.breakpoint.mdAndDown" id="btn-mobile-nav-menu" height="36px" x-small outlined color="rgb(25, 118, 210)" @click.stop="drawer = !drawer">
       <v-icon color="blue" large>
         {{ icons.menu }}
       </v-icon>
