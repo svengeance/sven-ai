@@ -383,3 +383,4 @@ MigrationBackup/
 .ionide/
 /gitversion.exe
 /.env
+/hugo.exe
