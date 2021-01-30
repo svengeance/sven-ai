@@ -125,7 +125,7 @@ and well maintained. Give it a look!
 >PRETTY_NAME="Alpine Linux v3.13"  
 >HOME_URL="https://alpinelinux.org/"  
 >BUG_REPORT_URL="https://bugs.alpinelinux.org/"  
-![](docker-is-awesome-preview.png)
+
 ## Linux Mint
 [Source](https://www.tecmint.com/upgrade-to-linux-mint-20/)  
 >NAME="Linux Mint"  
