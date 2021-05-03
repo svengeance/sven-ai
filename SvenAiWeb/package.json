@@ -22,7 +22,6 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "imagemin-pngquant": "^9.0.1",
-    "node-gyp": "^3.8.0",
     "nuxt": "^2.14.12",
     "responsive-loader": "^2.1.1",
     "sharp": "^0.26.1",
@@ -38,7 +37,6 @@
     "@nuxtjs/vuetify": "^1.11.2",
     "babel-eslint": "^10.1.0",
     "eslint-loader": "^4.0.2",
-    "node-sass": "^5.0.0",
     "sass-loader": "^7.3.1"
   }
 }
