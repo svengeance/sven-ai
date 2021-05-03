@@ -1,10 +1,14 @@
 <template>
   <v-app dark>
-    <MobileNavigation v-if="$vuetify.breakpoint.mdAndDown" :links="siteLinks" />
+    <client-only>
+      <MobileNavigation v-if="$vuetify.breakpoint.mdAndDown" :links="siteLinks" />
+    </client-only>
     <v-container fluid class="pa-0">
       <v-row class="mx-0">
         <v-col lg="9" xl="10" order="1" class="pa-0">
-          <Header />
+          <client-only>
+            <Header />
+          </client-only>
           <v-tabs v-if="$vuetify.breakpoint.lgAndUp" background-color="transparent" class="pl-1">
             <v-tab v-for="link in tabLinks" :key="link.title" :to="link.link" nuxt>
               {{ link.title }}
