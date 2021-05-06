@@ -2,7 +2,7 @@ version: "3"
 services:
 
     api:
-        image: stevev0189/sven.ai:0.6.4
+        image: stevev0189/sven.ai:0.6.7
         ports:
             - "9001:9001"
         environment: 
@@ -10,7 +10,7 @@ services:
         command: --urls "http://api"
 
     frontend:
-        image: stevev0189/sven.ai.web:0.6.4
+        image: stevev0189/sven.ai.web:0.6.7
         ports:
             - "5000:5000"
 
