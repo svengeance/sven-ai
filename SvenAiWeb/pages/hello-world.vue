@@ -35,7 +35,7 @@
           I Enjoy...
         </p>
         <p class="text-center text-body-2">
-          Competitive video games (League of Legends, Starcraft II, Apex Legends), cute animals, working out, and fresh ocean breezes.
+          Competitive video games (League of Legends, Starcraft II, Apex Legends), cute animals, working out, fresh ocean breezes, and spending lots quality of time with my significant other.
         </p>
         <p class="text-center text-body-2">
           Developing for me is not only my career, it's a hobby that I can't seem to put down. I spend a good bit of freetime engaging with strong developers and learning about their own unique problems, while experimenting on my own with the latest and greatest advancements in the .NET world.
