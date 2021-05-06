@@ -10,9 +10,9 @@ export default {
   router: {
     extendRoutes(routes, resolve) {
       routes.push({
-        name: 'about-default',
+        name: 'hello-default',
         path: '',
-        component: resolve(__dirname, 'pages/about.vue')
+        component: resolve(__dirname, 'pages/hello-world.vue')
       })  
     }
   },

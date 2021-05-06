@@ -2,15 +2,9 @@
   <v-layout class="content pt-2 pb-8">
     <v-row class="mx-0">
       <v-col offset="1" cols="10">
-        <v-img :src="require('~/assets/cat/cat.jpg?size=600')" class="about-image float-left mr-4 mb-1" width="100%" max-width="600px" alt="Image of my cats while I'm too shy to get my own.">
-          <span>Please enjoy this picture of my cats while I struggle to obtain my own</span>
+        <v-img :src="require('~/assets/about/puppy-portrait.png?size=600')" class="about-image float-left mr-4 mb-1" width="100%" max-width="600px" alt="A modest picture of me with my family pup">
         </v-img>
-        <section :class="{ 'text-h5': $vuetify.breakpoint.mdAndUp, 'text-h6': $vuetify.breakpoint.smAndDown }" class="grey--text text--lighten-1">
-          I'm Stephen Vernyi, aka Sven, developing software primarily in C#/.NET using a wide array of Microsoft/Azure products and SDKs.
-          I am currently based in Columbus Ohio, working at Select Sires Inc as a senior software developer.
-          My day-to-day has me working with various teams across different technology stacks in order to produce the best applications our industry has ever known.
-        </section>
-        <section :class="{ 'text-body-1': $vuetify.breakpoint.mdAndUp, 'text-body-2': $vuetify.breakpoint.smAndDown }" class="grey--text text--lighten-1 pt-6">
+        <section :class="{ 'text-body-1': $vuetify.breakpoint.mdAndUp, 'text-body-2': $vuetify.breakpoint.smAndDown }" class="grey--text text--lighten-1">
           <p class="text-h6 text--lighten-2 text-decoration-underline">
             University
           </p>
@@ -35,14 +29,17 @@
             Working at Select Sires thus far has truly been a pleasure. The industry is very unique, and surprisingly challenging.
             The breadth and depth of the data we serve demands heavy attention to detail, as each marketable product we publicize has some few hundred datapoints associated, each of which must
             adhere to the standards of the organization that published them.
-            <br>
+            <br />
+            These days I am called upon as a Solutions Architect to assist with understanding business requirements directly from stakeholders. With this understanding I 
+            am tasked with documenting Solution Proposals, and discussions the merits and pitfalls of my own compared with other proposals.
+            <br />
             Perhaps the most educating experience from my time so far at Select Sires can be found in the auspicious time at which I was hired.
-            I joined a team comprised of talented individuals wearing many hats and bearing a mulitude of responsibilities to grow the company's technological front, and
+            I joined a team comprised of talented individuals wearing many hats and bearing a multitude of responsibilities to grow the company's technological front, and
             within a year of having joined the company, I watched our team grow into a full organization, more than tripling in size. We rapidly progressed on various fronts, transitioning from
             Trello to Azure, from copy-and-paste deployments on local servers to CI/CD pipelines in Azure, and from monolithic webservers to fast, easily-deployable microservices.
             Being able to be a part of this and have a hand in assisting on all fronts was an experience that I feel fortunate to have acquired, as I was able to take on responsibilities
             not lightly given to newer graduates.
-            <br>
+            <br />
             It was during this time that I was able to take the lead on some larger architectural decisions - upgrading to .NET Core for our primary API, refactoring older code that needed some love,
             and ultimately breaking down our monolithic codebases into more manageable sections.
           </p>
@@ -53,7 +50,7 @@
             I spend most of my freetime with my significant other, at the gym, gaming, or hanging out with likeminded individuals in programming servers as we talk about current
             and upcoming technologies. I'm fortunate to be a part of some communities which fosters mutual learning among all members, sometimes from leaders in their respective fields,
             which gives me insights and perspectives I otherwise would never come across.
-            <br>
+            <br />
             I play mostly competitive multiplayer games that I can enjoy with friends, such as Overwatch, Smite, Starcraft 2, and League of Legends.
             The layout for this website is actually heavily inspired by the League client.
           </p>

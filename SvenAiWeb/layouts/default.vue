@@ -34,6 +34,7 @@ export default {
   data() {
     return {
       siteLinks: [
+        { title: 'Hello!', link: '/hello-world' },
         { title: 'About', link: '/about' },
         { title: 'Projects', link: '/projects' },
         { title: 'Career', link: '/career' },

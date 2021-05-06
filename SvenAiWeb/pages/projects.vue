@@ -10,7 +10,7 @@
             <v-list-item-title class="headline">
               {{ project.name }}
             </v-list-item-title>
-            <v-list-item-subtitle>{{ project.subtitle }}</v-list-item-subtitle>
+            <v-list-item-subtitle v-html="project.subtitle"></v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
 
@@ -20,10 +20,11 @@
           </perfect-scrollbar>
         </div>
         <div v-else>
-          <v-img :src="require('~/assets/' + project.mainImage + '?size=600')" :height="cardImageHeight" :alt="project.name + ' Image'" contain />
+          <v-img class="mx-4" :src="require('~/assets/' + project.mainImage + '?size=600')" :height="cardImageHeight" :alt="project.name + ' Image'" contain />
 
           <v-card-text>
-            <span class="font-weight-bold">Goal: </span>{{ project.goal }}
+            <span class="font-weight-bold">Goal: </span>
+            <span v-html="project.goal"></span>
           </v-card-text>
         </div>
 
@@ -71,6 +72,32 @@ export default {
       },
       flippedCards: [],
       projects: [
+                {
+          icon: 'projects/husky/icon.png',
+          name: 'Husky',
+          subtitle: 'World\'s First Native Cross-Platform Any-App Installer, Based on .NET Core',
+          mainImage: 'projects/husky/installer-logo.png',
+          goal: 'Utilizing techniques not found in almost any other DotNet project (and certainly no other installer), produce the world\'s first installer that is open source, extensible, and <b>easy to use</b>, all with our very own C#/DotNet. <br /> This project uses an experimental, reflection-less CoreRT/NativeAoT runtime to deliver small binary files that run natively with zero software dependencies.',
+          description: `
+          <p>
+            Like many developers before me, I had an idea born because I observed a lack of easy-to-use tooling in some area, and I thought that I could do it better.
+          </p>
+          <p>
+            Husky is the world's first <i>Native</i> C# installer. Normally, C# requires an existing runtime on the user's sytem - in prior versions of Windows, this was even installed as part of the operating system.
+            With .NET Core, no such existing runtime exists, and so a .NET Core-based installer would seem impossible, as the 50MB+ runtime (self-contained or not) would preclude that idea.
+          </p>
+          <p>
+            The capability for Husky was inspired by Michal Strehovský, who showed that <a href="https://medium.com/@MStrehovsky/building-a-self-contained-game-in-c-under-8-kilobytes-74c3cf60ea04">it is indeed possible to build a C# Snake game in under 8kb</a>.
+            Simple? No, but doable. While Husky has no intentions on replacing the core libraries, or foregoing a GC by avoiding heap allocations altogether, Husky sheds the capability of all reflection and dynamic code generation in order to reduce its binary size
+            (both of which are critical for most existing high-performance libraries).
+          </p>
+          <p>
+            Husky offers several capabilities not found in any other installer. A web-based (mini-electron) UI, a YAML-first installer workflow configuration, integrated & dockerized E2E testing - these are modern conceps that 
+            other installers based on antiquated technologies can not offer as easily as one built on the latest .NET Core SDKs. <br />
+            My dream with Husky is to be <i>the</i> open-source installer that developers first think about when contemplating how to deliver their products.
+          </p>
+          `
+        },
         {
           icon: 'projects/sven-ai/icon.png',
           name: 'Sven.ai',
@@ -95,9 +122,32 @@ export default {
           `
         },
         {
+          icon: 'projects/blog/icon.png',
+          name: 'Sven.ai Blog',
+          subtitle: 'First Foray Into Jamstack With Hugo and Github Pages',
+          mainImage: 'projects/blog/blog-entry.png',
+          goal: 'Spin up my own blog as a creative outlet to document some adventures I encounter while developing, and learn a new webstack in the process. <br /> <br /> See for yourself <a target="_blank" href="https://blog.sven.ai">here!</a>',
+          description: `
+          <p>
+            What started off as series of thoughts akin to <i>"Man, I should really write that down"</i> culminated into this project. Going in, I didn't really understand what one "typically" did for a blog - 
+            how were pages managed, how easy was it to write them, where was it deployed, <i>how in the heck did people make blogs so fast?</i>
+          </p>
+          <p>
+            The answer to the above questions was found in the Jamstack technology soup - being able to efficiently write new pages using some CLI-assisted tool, and then publishing the result 
+            as a series of statically-generated pages which can be hosted by any provider. My blog itself is hosted via Github Pages - I was surprised, and very pleased, with how fast everything is. 
+            Turns out SPAs aren't necessarily the answer for everything these days.
+          </p>
+          <p>
+            Blog aside, I did have a little bit of fun trickery while setting up the comment system via Remark42. I wanted an open-source system that had free self-hosting options (honestly - not expecting a whole bunch of comments!), 
+            but of course the self-hosting bit means more <i>fun</i> in the setup. Remark42 offered everything I needed, and is hosted via a docker container. It lets users comment from a plethora of accounts - even anonymously 
+            (which is cautiously monitored by getting an email per-comment..).
+          </p>
+          `
+        },
+        {
           icon: 'projects/ef-core/icon.png',
           name: 'Entity Framework Core',
-          subtitle: 'The Motherload of all .NET ORMs that I Enjoy Contributing to',
+          subtitle: 'An opportunity to work with the most complete open-source .NET ORM and understand its internals',
           mainImage: 'projects/ef-core/ef-repo.png',
           goal: 'Work with highly skilled professionals, to learn better how to use one of the most complex and customizable tools for database operations in C#, and to do what I can to make Entity Framework the best it can be',
           description: `
@@ -115,9 +165,9 @@ export default {
         {
           name: 'Select Sires - Bull Search',
           icon: 'projects/bull-search/icon.png',
-          subtitle: `Industry's Leading Search Tool, Built With Pure Performance in Mind`,
+          subtitle: `Industry's Leading Search Tool, Exposing Over 20 Million <b>Filterable</b> Datapoints in Milliseconds`,
           mainImage: 'projects/bull-search/bsw-grid.png',
-          goal: 'Produce a Search Tool that beats out all of our competitors by using the latest technologies .NET and Angular has to offer and build a high-performance, highly optimized tool that is capable of serving requests of any complexity that scales for any number of users',
+          goal: 'Produce a Search Tool that beats out all of our competitors by using the latest technologies .NET and Angular has to offer and build a high-performance, highly optimized tool that is capable of serving requests of any complexity that scales for any number of users <br /> </br /> See for yourself at <a href="https://www.selectsires.com/bull-search">https://selectsires.com/bull-search</a>',
           description: `
           <p>
             In my time at Select Sires, I have been a part of 4 different Bull Search tools, each with their own individual successes and failures, but <i>none</i> were fully a success.
