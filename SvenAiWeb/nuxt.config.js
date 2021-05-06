@@ -73,7 +73,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/perfect-scrollbar.js'
+    '@/plugins/perfect-scrollbar.js',
+    { src: '@/plugins/lottie.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules

@@ -1,9 +1,9 @@
 <template>
-  <v-layout class="content pt-2 pb-8" d-flex flex-column>
-    <v-row class="mx-0 mt-16">
+  <v-layout class="content" d-flex flex-column>
+    <v-row class="mx-0">
       <v-col offset="2" cols="8">
-        <img class="mt-16" id="cat" src="~/assets/husky.png" />
-        <p class="text-center mt-6 mb-0 text-h4 grey--text text--lighten-3">Hey! I'm Sven</p>
+        <div @click="handlePup" ref="pup-container" id="pup-container" class="mx-auto"></div>
+        <p class="text-center mb-0 text-h4 grey--text text--lighten-3">Hey! I'm Sven</p>
         <p class="text-center pt-0 text-subtitle-1 grey--text text--lighten-2">I like building fast, reliable software that empowers people to express their dreams</p>
       </v-col>
     </v-row>
@@ -46,20 +46,55 @@
 </template>
 
 <style lang="scss" scoped>
-  #cat {
-    border-bottom: 1px solid #ffffffaa;
-    display: block;
-    margin: auto;
-    width: 150px;
+  #pup-container {
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
   }
 </style>
 
 <script>
+import lottie from 'lottie-web/build/player/lottie';
 export default {
   head() {
     return {
       title: 'Hello World'
     }
+  },
+  data: () => ({
+    popupFrame: 59,
+    hiddenFrame: 110
+  }),
+  methods: {
+    handlePup: function() {
+      if (!this.player)
+        return;
+
+      if (this.player.firstFrame == 0)
+        this.hidePup()
+      else if (this.player.firstFrame == this.popupFrame)
+        this.showPup()
+    },
+    hidePup: function() {
+      this.player.playSegments([this.popupFrame, this.hiddenFrame], true);
+    },
+    showPup: function() {
+      this.player.playSegments([0, this.popupFrame], true)
+    }
+  },
+  mounted: function() {
+    this.$nextTick(() => {
+        this.player = lottie.loadAnimation({
+          container: this.$refs['pup-container'],
+          renderer: 'svg',
+          autoplay: false,
+          loop: false,
+          path: 'husky.json'
+        });
+        setTimeout(() => {
+          this.showPup()
+        }, 1000);
+      })
   }
 }
 </script>

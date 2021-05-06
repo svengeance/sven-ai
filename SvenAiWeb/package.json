@@ -22,6 +22,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "imagemin-pngquant": "^9.0.1",
+    "lottie-web": "^5.7.8",
     "nuxt": "^2.14.12",
     "responsive-loader": "^2.1.1",
     "sharp": "^0.26.1",
