@@ -37,7 +37,7 @@
 
 <style lang="scss" scoped>
   #header {
-    background-color: rgba($color: #232323, $alpha: 1);
+    background-color: #232323;
     position: relative;
   }
   .header-links {
