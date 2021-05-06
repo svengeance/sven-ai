@@ -19,7 +19,7 @@
           The best results are delivered by those who truly try to understand not only what is being asked, but the underlying reasons and the value propositions: mutual understanding, respect, and belief creates an inordinately strong desire for success.
         </p>
       </v-col>
-      <v-col offset="2" cols="8" lg="2">
+      <v-col offset="2" cols="8" offset-lg="1" lg="2">
         <p class="text-center text-h6">
           In the future...
         </p>
@@ -30,7 +30,7 @@
           To be surrounded by likeminded individuals who have a passion for success, and whose rigorous knowledge <i>forces</i> me to continually better myself as a developer, architect, and leader is my goal.
         </p>
       </v-col>
-      <v-col offset="2" cols="8" lg="2">
+      <v-col offset="2" cols="8" offset-lg="1" lg="2">
         <p class="text-center text-h6">
           I Enjoy...
         </p>
