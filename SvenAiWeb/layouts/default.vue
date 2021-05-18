@@ -7,19 +7,23 @@
       <v-row class="mx-0">
         <v-col lg="9" xl="10" order="1" class="pa-0">
           <client-only>
-            <Header />
+            <div id="header-wrapper">
+              <Header />
+            </div>
           </client-only>
-          <v-tabs v-if="$vuetify.breakpoint.lgAndUp" background-color="transparent" class="pl-1">
-            <v-tab v-for="link in tabLinks" :key="link.title" :to="link.link" nuxt>
-              {{ link.title }}
-            </v-tab>
-          </v-tabs>
-          <v-main class="pt-4">
-            <perfect-scrollbar v-if="showScrollBar" ref="scroll">
-              <nuxt />
-            </perfect-scrollbar>
-            <nuxt v-else />
-          </v-main>
+          <div id="body-wrapper">
+            <v-tabs v-if="$vuetify.breakpoint.lgAndUp" background-color="transparent" class="pl-1">
+              <v-tab v-for="link in tabLinks" :key="link.title" :to="link.link" nuxt>
+                {{ link.title }}
+              </v-tab>
+            </v-tabs>
+            <v-main class="pt-4">
+              <perfect-scrollbar v-if="showScrollBar" ref="scroll">
+                <nuxt />
+              </perfect-scrollbar>
+              <nuxt v-else />
+            </v-main>
+          </div>
         </v-col>
         <v-col v-if="$vuetify.breakpoint.lgAndUp" cols="3" xl="2" order="2" class="pa-0">
           <GithubFeed class=".d-inline-block" />
@@ -28,6 +32,16 @@
     </v-container>
   </v-app>
 </template>
+
+<style scoped lang="scss">
+#header-wrapper {
+  position: fixed;
+  width: 100%;
+}
+#body-wrapper {
+  margin-top: $header-height;
+}
+</style>
 
 <script>
 export default {

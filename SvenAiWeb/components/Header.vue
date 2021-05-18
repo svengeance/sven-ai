@@ -2,7 +2,7 @@
   <header>
     <v-container fluid class="mx-0 px-0">
       <v-row id="header" class="site-header-component pt-md-4 mx-0">
-        <v-col v-if="$vuetify.breakpoint.lgAndUp" cols="3" lg="3" class="pt-md-8 pt-lg-6" align-self="start">
+        <v-col v-if="$vuetify.breakpoint.lgAndUp" cols="3" lg="2" class="pt-md-8 pt-lg-6" align-self="start">
           <ContactMe />
         </v-col>
         <v-col offset="2" offset-md="3" offset-lg="0" cols="9" lg="6" sm="8" md="6" align-self="center">
@@ -38,7 +38,6 @@
 <style lang="scss" scoped>
   #header {
     background-color: #232323;
-    position: relative;
   }
   .header-links {
     height: 100%;
