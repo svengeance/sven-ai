@@ -34,7 +34,7 @@ export default {
       { hid: 'og:description', name: 'og:description', content: 'Professional/portfolio website for Stephen Vernyi (Sven)' },
       { hid: 'og:type', name: 'og:type', content: 'Website' },
       { hid: 'og:url', name: 'og:url', content: 'https://sven.ai' },
-      { hid: 'og:image', name: 'og:image', content: '/mally_avatar.png' },
+      { hid: 'og:image', name: 'og:image', content: 'https://sven.ai/mally_avatar.png' },
       { hid: 'og:locale', name: 'og:locale', content: 'en-EN' },
       { hid: 'og:site_name', name: 'og:site_name', content: 'Sven | About' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
@@ -42,7 +42,7 @@ export default {
       { hid: 'twitter:creator', name: 'twitter:creator', content: 'SvenVernyi' },
       { hid: 'twitter:title', name: 'twitter:title', content: 'Sven | About' },
       { hid: 'twitter:description', name: 'twitter:description', content: 'Professional/portfolio website for Stephen Vernyi (Sven)' },
-      { hid: 'twitter:image', name: 'twitter:image', content: '/mally_avatar.png' }
+      { hid: 'twitter:image', name: 'twitter:image', content: 'https://sven.ai/mally_avatar.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
