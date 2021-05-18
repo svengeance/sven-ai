@@ -7,7 +7,7 @@
         <p class="text-center pt-0 text-subtitle-1 grey--text text--lighten-2">I like building fast, reliable software that empowers people to express their dreams</p>
       </v-col>
     </v-row>
-    <v-row class="mx-0 mt-16 pt-16">
+    <v-row class="mx-0 mt-16 pt-16 mb-8">
       <v-col offset="2" cols="8" lg="2">
         <p class="text-center text-h6">
           Presently...
